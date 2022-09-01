@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米账号-登录</title>
+    <link rel="shortcut icon" href="./imge/logo-mi2.png">
+    <!-- 引入初始化CSS -->
+    <link rel="stylesheet" href="./CSS/Theloginpageisinitialized.css">
+    <!-- 引入私有的样式 -->
+    <link rel="stylesheet" href="./CSS/LoginPage.css">
+</head>
+<body>
+    <div class="w">
+        <!-- 头部 -->
+            <div class="logo">
+                <img src="./imge/logo-mi2.png" alt="" title="老米商城登录界面">
+                <span>小米账号</span>
+                <ul>
+                    <li><a href="">用户协议</a></li>
+                    <li><a href="">隐私政策</a></li>
+                    <li><a href="">帮助中心</a></li>
+                </ul>
+            </div>
+        <!-- 主体 -->
+        <div class="registerarea">
+            <div class="reg_form">
+                <div class="denglu">登录</div>
+                <form action="">
+                    <ul>
+                        <li><label for="yonghu">用户名：</label><input type="text" id="yonghu" class="yonghu"></li>
+                    </ul>
+                    <ul>
+                        <li><label for="youxiang">邮&nbsp&nbsp&nbsp箱：</label><input type="email" id="youxiang"11></li>
+                    </ul>
+                    <ul>
+                        <li><label for="shouji">手机号：</label><input type="tel" id="shouji" class="shoujihao"></li>
+                    </ul>
+                    <ul>
+                        <li ><label for="mi">登陆密码：</label><input type="password" id="mi" class="denglumima"></li>
+                    </ul>
+                    <ul>
+                        <li ><label for="que">确认密码：</label><input type="password" id="que" class="querenmima"></li>
+                    </ul>
+                    <li class="agree"><input type="checkbox" checked></li> <i>同意协议</i>
+                    <a href="">《老米商城协议》</a><br>
+                    <div class="zhuce"><a href="./index.html" class="three">登  陆</a></div>
+                </form>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <footer>
+            <div class="mod_copyright">
+                <div class="links">
+                   <a href=""> 关于我们</a>  |  <a href="">联系我们</a>  |  <a href="">联系客服</a>  |  <a href="">商家入驻</a>  | <a href=""> 营销中心</a>  |  <a href="">老米商城</a>  |  <a href="">友情链接</a>  | <a href=""> 销售联盟</a>  | <a href=""> 老米商城社区</a>  |  <a href="">老米商城公益</a>  |  <a href="">English Site</a>  |  <a href="">ContactU</a>
+                </div>
+                <div class="copyright">
+                    地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn <br>
+                    京ICP备08001421号京公网安备110108007702
+                </div>
+            </div>
+        </footer>
+    </div> -->
+    <!-- JS代码 -->
+    <script>
+        // 获取用户名
+        var yonghu = document.querySelector('.yonghu');
+        // 获取手机号
+        var shoujihao = document.querySelector('.shoujihao');
+        // 获取登陆密码
+        var denglumima = document.querySelector('.denglumima');
+        // 获取确认密码
+        var querenmima = document.querySelector('.querenmima');
+         // 获取登录按钮
+         var three = document.querySelector('.three');
+        three.onclick = function() {
+            if (yonghu.value != "user") {
+                alert('用户名错误');
+                three.href='';
+            } else if (shoujihao.value.length != 11) {
+                alert('手机号错误,手机号长度为11位');
+                three.href='';
+            } else if (denglumima.value != 123456) {
+                alert('登录密码错误');
+                three.href='';
+            } else if (querenmima.value != 123456) {
+                alert('确认密码错误');
+                three.href='';
+            } else {
+                three.href = './index.html';
+            }
+        }
+    </script>
+</body>
+</html>

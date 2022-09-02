@@ -14,9 +14,14 @@ $(function () {
     },
   })
   // 导航栏
-  $('.xuanze li').eq(0).hover(function () {
-    $('.xuanze li').find('.caidan').show().slideDown()
-  }, function () {
-    
-  })
+  $('.xuanze ul')
+    .find('.Li')
+    .hover(
+      function () {
+        $('#BottomList').stop().slideDown()
+      },
+      function () {
+        $('#BottomList').stop().slideUp()
+      }
+    )
 })

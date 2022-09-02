@@ -189,13 +189,15 @@ body {
 }
 
 #BottomList {
+    display: none;
     position: absolute;
+    top: 141px;
     z-index: 9999;
     width: 100%;
     height: 200px;
     border-top: 1px solid red;
     background-color: white;
-    box-shadow: 0 0 5px red;
+    box-shadow: 0 0 2px red;
 }
 
 #BottomList div {

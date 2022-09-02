@@ -20,5 +20,8 @@
   "dependencies": {
     "jquery": "^3.6.1",
     "swiper": "^8.3.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }

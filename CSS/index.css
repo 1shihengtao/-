@@ -6,11 +6,13 @@
     box-sizing: border-box;
     cursor: pointer;
 }
+
 /* em 和 i 斜体的文字不倾斜 */
 em,
 i {
     font-style: normal
 }
+
 /* 去掉li 的小圆点 */
 li {
     list-style: none
@@ -31,12 +33,13 @@ button {
 a {
     text-decoration: none
 }
+
 button,
 input {
     /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
     font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
     /* 默认有灰色边框我们需要手动去掉 */
-    border: 0; 
+    border: 0;
     outline: none;
 }
 
@@ -52,6 +55,7 @@ body {
 .none {
     display: none
 }
+
 /* 清除浮动 */
 .clearfix:after {
     visibility: hidden;
@@ -64,22 +68,25 @@ body {
 .clearfix {
     *zoom: 1
 }
+
 @font-face {
     font-family: 'icomoon';
-    src:  url('/fonts/icomoon.eot?7sajqg');
-    src:  url('/fonts/icomoon.eot?7sajqg#iefix') format('embedded-opentype'),
-      url('/fonts/icomoon.ttf?7sajqg') format('truetype'),
-      url('/fonts/icomoon.woff?7sajqg') format('woff'),
-      url('/fonts/icomoon.svg?7sajqg#icomoon') format('svg');
+    src: url('/fonts/icomoon.eot?7sajqg');
+    src: url('/fonts/icomoon.eot?7sajqg#iefix') format('embedded-opentype'),
+        url('/fonts/icomoon.ttf?7sajqg') format('truetype'),
+        url('/fonts/icomoon.woff?7sajqg') format('woff'),
+        url('/fonts/icomoon.svg?7sajqg#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
-  }
+}
+
 /* 导航栏 */
 .max {
     height: 40px;
     background-color: #333;
 }
+
 /* 导航栏里的内容 */
 .min {
     position: relative;
@@ -87,17 +94,21 @@ body {
     width: 1226px;
     margin: auto;
 }
+
 .min ul li {
     float: left;
     line-height: 40px;
     margin-right: 15px;
 }
+
 .min ul li a {
     color: rgb(192, 192, 192);
 }
+
 .min ul li a:hover {
     color: rgb(241, 119, 88);
 }
+
 .min .xiala {
     position: absolute;
     display: none;
@@ -106,62 +117,77 @@ body {
     width: 100px;
     height: 100px;
 }
-.dian:hover .xiala{
+
+.dian:hover .xiala {
     display: block;
     width: 100px;
     height: 100px;
-    
+
 }
+
 .xiala img {
     width: 70px;
     height: 60px;
     margin: 5px 15px;
 }
+
 .xiala a {
     display: block;
     padding: 0 26px;
 }
+
 .zuoce {
     position: relative;
 }
+
 .zuoce ul li {
     float: right;
 }
+
 .zuoce .dian1 {
     width: 80px;
     text-align: center;
 }
+
 .dian1:hover {
     color: rgb(241, 119, 88);
     background-color: thistle;
 }
+
 /* <!-- logo区域 --> */
 .min {
     height: 100px;
 }
+
 .logo {
     width: 56px;
     height: 56px;
 }
+
 .logo img {
     width: 100%;
     height: 100%;
     margin-top: 22px;
 }
+
 .xuanze {
     position: relative;
 }
+
 .xuanze ul {
     margin-left: 188px;
     margin-top: -20px;
 }
+
 .xuanze ul li {
     padding-right: 15px;
 }
+
 .xuanze ul li a {
     font-size: 16px;
     color: #000;
 }
+
 /* 小米手机 */
 .xuanze .caidan {
     display: none;
@@ -172,14 +198,17 @@ body {
     height: 200px;
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan ul {
     position: absolute;
 }
+
 .caidan ul li {
     position: relative;
     float: left;
@@ -188,12 +217,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan img {
     margin: 20px 20px;
 }
+
 .caidan a {
     margin-left: 50px;
 }
+
 /* 红米手机 */
 .xuanze .caidan1 {
     display: none;
@@ -204,14 +236,17 @@ body {
     height: 200px;
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan1 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan1 ul {
     position: absolute;
 }
+
 .caidan1 ul li {
     position: relative;
     float: left;
@@ -220,12 +255,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan1 img {
     margin: 20px 20px;
 }
+
 .caidan1 a {
     margin-left: 50px;
 }
+
 /* 电视 */
 .xuanze .caidan2 {
     display: none;
@@ -236,14 +274,17 @@ body {
     height: 200px;
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan2 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan2 ul {
     position: absolute;
 }
+
 .caidan2 ul li {
     position: relative;
     float: left;
@@ -252,12 +293,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan2 img {
     margin: 20px 20px;
 }
+
 .caidan2 a {
     margin-left: 50px;
 }
+
 /* 笔记本 */
 .xuanze .caidan3 {
     display: none;
@@ -268,14 +312,17 @@ body {
     height: 200px;
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan3 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan3 ul {
     position: absolute;
 }
+
 .caidan3 ul li {
     position: relative;
     float: left;
@@ -284,12 +331,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan3 img {
     margin: 20px 20px;
 }
+
 .caidan3 a {
     margin-left: 50px;
 }
+
 /* 平板 */
 .xuanze .caidan4 {
     display: none;
@@ -300,14 +350,17 @@ body {
     height: 200px;
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan4 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan4 ul {
     position: absolute;
 }
+
 .caidan4 ul li {
     position: relative;
     float: left;
@@ -316,12 +369,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan4 img {
     margin: 20px 20px;
 }
+
 .caidan4 a {
     margin-left: 50px;
 }
+
 /* 家电 */
 .xuanze .caidan5 {
     display: none;
@@ -333,14 +389,17 @@ body {
 
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan5 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan5 ul {
     position: absolute;
 }
+
 .caidan5 ul li {
     position: relative;
     float: left;
@@ -349,12 +408,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan5 img {
     margin: 20px 20px;
 }
+
 .caidan5 a {
     margin-left: 50px;
 }
+
 /* 路由器 */
 .xuanze .caidan6 {
     display: none;
@@ -366,14 +428,17 @@ body {
 
     background-color: rgb(255, 255, 255);
 }
+
 .xuanze ul li:hover .caidan6 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
     z-index: 1;
 }
+
 .caidan6 ul {
     position: absolute;
 }
+
 .caidan6 ul li {
     position: relative;
     float: left;
@@ -382,12 +447,15 @@ body {
     height: 200px;
     margin-top: 20px;
 }
+
 .caidan6 img {
     margin: 20px 20px;
 }
+
 .caidan6 a {
     margin-left: 50px;
 }
+
 /* 搜索框 */
 .search {
     position: relative;
@@ -398,6 +466,7 @@ body {
     margin-top: -45px;
     border: 1px solid rgb(245, 115, 40);
 }
+
 .one {
     float: right;
     width: 48px;
@@ -405,42 +474,51 @@ body {
     background-color: rgb(255, 255, 255);
     border-left: 1px solid rgb(245, 115, 40);
 }
+
 .two {
     position: absolute;
     width: 245px;
     height: 48px;
     padding-left: 10px;
 }
+
 /* <!-- 版心和侧边栏 --> */
 .min1 {
     width: 1226px;
     height: 460px;
     margin: auto;
 }
+
 .nav {
     position: relative;
     float: left;
     width: 235px;
     height: 460px;
+    z-index: 999;
     background-color: #999999;
 }
+
 .nav ul {
     margin: 20px 0;
 }
+
 .nav ul .r {
     width: 235px;
     height: 42px;
     padding-left: 20px;
 }
+
 .nav ul .r a {
     font-size: 14px;
     text-decoration: none;
     color: #ffff;
     line-height: 42px;
 }
+
 .nav ul .r:hover {
     background-color: rgb(245, 92, 53);
 }
+
 /* 手机下拉菜单 */
 .nav .neirong {
     position: absolute;
@@ -450,12 +528,14 @@ body {
     width: 991px;
     height: 460px;
     background-color: rgb(255, 255, 255);
-    
+
 }
+
 .nav li:hover .neirong {
     display: block;
     box-shadow: 2px 2px 10px 2px;
 }
+
 .neirong ul li {
     float: left;
     padding: 30px 0;
@@ -463,13 +543,16 @@ body {
     width: 200px;
     height: 200px;
 }
+
 .neirong ul li img {
     margin: 5px 20px;
 }
+
 .neirong ul li p {
     text-align: center;
     font-size: 16px;
 }
+
 /* 电视下拉菜单 */
 .nav .neirong1 {
     position: absolute;
@@ -479,26 +562,41 @@ body {
     width: 991px;
     height: 460px;
     background-color: rgb(255, 255, 255);
-    
+
 }
+
 .nav .neirong1 h2 {
     font-size: 40px;
     text-align: center;
     margin-top: 200px;
 }
+
 .nav .r:hover .neirong1 {
     display: block;
     box-shadow: 2px 2px 10px 2px;
 }
+
 /* 轮播图 */
-.image {
-    float: left;
-    width: 991px;
+section {
+    position: absolute;
+    width: 1226px;
     height: 460px;
 }
-.image .lunbo {
-    width: 100%;
-    height: 100%;
+section img {
+    float: left;
+    width: 1226px;
+    height: 460px;
+}
+section .swiper-pagination {
+    width: 400px !important;
+    margin-left: 940px;
+}
+section .swiper-button-next {
+    color: #d8d8d8;
+}
+section .swiper-button-prev {
+    left: 244px;
+    color: #d8d8d8;
 }
 /* <!-- 选择模块 --> */
 .min2 {
@@ -509,6 +607,7 @@ body {
     margin-top: 14px;
     margin-bottom: 27px;
 }
+
 /* <!-- 以旧换新、F码通道等等等 --> */
 .min2 .one {
     position: absolute;
@@ -516,51 +615,62 @@ body {
     height: 172px;
     background-color: #5f5750;
 }
+
 .min2 .one ul {
     margin: 7px 10px;
 }
+
 .min2 .one ul li img {
     width: 25px;
     height: 25px;
 }
+
 .min2 .one ul li {
     float: left;
     width: 70px;
     height: 80px;
 }
+
 .min2 .one ul li img {
     display: block;
     margin-left: 22px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
 .min2 .one ul li a {
     color: #fff;
     margin-left: 10px;
 }
+
 .min2 .one ul li .le {
     margin-left: 16px;
 }
+
 /* <!-- 手机推荐 一 --> */
 .min2 .two {
     width: 316px;
     height: 172px;
     margin-left: 248px;
 }
+
 .min2 .two img {
     width: 100%;
     height: 100%;
 }
+
 /* <!-- 手机推荐 二 --> */
 .min2 .three {
     width: 316px;
     height: 172px;
     margin-left: 580px;
 }
+
 .min2 .three img {
     width: 100%;
     height: 100%;
 }
+
 /* <!-- 手机推荐 三 --> */
 .min2 .five {
     float: right;
@@ -568,25 +678,30 @@ body {
     height: 172px;
     margin-top: -172px;
 }
+
 .min2 .five img {
     width: 100%;
     height: 100%;
 }
+
 /* <!-- 第二版 --> */
 .st {
     width: 100%;
     height: 850px;
     background-color: #f5f5f5;
 }
+
 /* <!-- k40手机推荐 --> */
 .k40 {
     width: 1226px;
     height: 120px;
     margin: auto;
 }
+
 .k40 img {
     margin: 27px auto;
 }
+
 /* <!-- 手机模块 --> */
 .st .shouji {
     position: relative;
@@ -594,10 +709,12 @@ body {
     height: 58px;
     margin: 50px auto;
 }
+
 .shouji .shouji1 {
     font-size: 22px;
     line-height: 58px;
 }
+
 .shouji .chakan {
     float: right;
     position: absolute;
@@ -606,28 +723,34 @@ body {
     width: 92px;
     height: 58px;
 }
+
 .shouji .chakan a {
     font-size: 16px;
     line-height: 58px;
     margin-left: 13px;
     color: #09ff00;
 }
+
 .shouji .chakan a:hover {
     color: rgb(230, 87, 21);
 }
+
 /* <!-- 手机模块内容 --> */
 .shouji .nei {
     position: relative;
     height: 613px;
 }
+
 .nei .zuida {
     width: 234px;
     height: 613px;
     transition: all .5s ease;
 }
+
 .nei .zuida:hover {
     box-shadow: 2px 2px 10px 2px;
 }
+
 .nei .zuida1 {
     position: absolute;
     right: 0;
@@ -636,6 +759,7 @@ body {
     width: 981px;
     height: 613px;
 }
+
 .nei .zuida1 ul li {
     float: left;
     width: 230px;
@@ -644,48 +768,59 @@ body {
     background-color: rgb(255, 255, 255);
     transition: all .5s ease;
 }
+
 .nei .zuida1 ul li:nth-child(4) {
     margin-right: 0;
 }
+
 .nei .zuida1 ul li:last-child {
     margin-right: 0;
 }
+
 .nei .zuida1 ul li:nth-child(n+5) {
     margin-top: 12px;
 }
+
 .nei .zuida1 ul li img {
     width: 160px;
     height: 160px;
     margin-left: 35px;
     margin-top: 40px;
 }
+
 .zuida1 ul li h3 {
     font-size: 14px;
     margin-left: 50px;
 }
+
 .zuida1 ul li p {
     font-size: 12px;
     margin-left: 60px;
     margin-bottom: 7px;
 }
+
 .zuida1 ul li span {
     font-size: 14px;
     margin-left: 85px;
     color: rgb(230, 87, 21);
 }
+
 .nei .zuida1 ul li:hover {
     box-shadow: 2px 2px 10px 2px;
     color: pink;
 }
+
 /* 底部 */
 .mod_copyright .links {
     text-align: center;
     padding-top: 20px;
 }
+
 .mod_copyright .links a {
     margin: 0 10px;
     color: #999999;
 }
+
 .mod_copyright .copyright {
     text-align: center;
     padding-top: 17px;

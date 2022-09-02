@@ -1,0 +1,16 @@
+{
+  "id": "3625725",
+  "name": "小米商城",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "445409",
+      "name": "按键分割线",
+      "font_class": "anjianfengexian",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    }
+  ]
+}

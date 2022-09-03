@@ -10,5 +10,18 @@ gulp.task('html', (res) => {
 })
 gulp.task('watch', (res) => {
   gulp.watch('*.html', gulp.parallel('html'))
+  gulp.watch('sass/*.scss', gulp.parallel('sass'))
   res()
 })
+gulp.task('sass', (res) => {
+  gulp.src('sass/*.scss').pipe(sourcemaps.init()).pipe(sass()).pipe(sourcemaps.write('./')).pipe(gulp.dest('dist/css')).pipe(connect.reload())
+  res()
+})
+gulp.task('server', (res) => {
+  connect.server({
+    root: 'dist',
+    livereload: true,
+  })
+  res()
+})
+gulp.task('default', gulp.parallel('watch', 'server'))

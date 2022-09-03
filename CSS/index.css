@@ -98,18 +98,16 @@ body {
 }
 
 .min .xiala {
+    z-index: 999999;
     position: absolute;
     display: none;
     top: 40px;
-    left: 540px;
+    left: 605px;
     width: 100px;
     height: 100px;
-}
+    background-color: white;
+    box-shadow: 0 0 5px 1px #a8a8a8;
 
-.dian:hover .xiala {
-    display: block;
-    width: 100px;
-    height: 100px;
 }
 
 .xiala img {
@@ -125,20 +123,53 @@ body {
 
 .zuoce {
     position: relative;
-}
-
-.zuoce ul li {
     float: right;
 }
 
 .zuoce .dian1 {
-    width: 80px;
+    position: relative;
+    width: 120px;
+    height: 40px;
     text-align: center;
+    background-color: #424242;
+}
+
+.dian1::before {
+    content: "\e600";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662167809609') format('woff2'),
+        url('iconfont.woff?t=1662167809609') format('woff'),
+        url('iconfont.ttf?t=1662167809609') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    font-style: normal;
+    color: white;
+    color: rgb(241, 119, 88);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .dian1:hover {
     color: rgb(241, 119, 88);
-    background-color: thistle;
+    background-color: white;
+}
+
+.dian1 .gouwu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 9999999999;
+    width: 350px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 5px 15px 1px #9c9c9c;
+}
+
+.gouwu p {
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
 }
 
 /* <!-- logo区域 --> */
@@ -195,9 +226,8 @@ body {
     z-index: 9999;
     width: 100%;
     height: 200px;
-    border-top: 1px solid red;
     background-color: white;
-    box-shadow: 0 0 2px red;
+    box-shadow: 0 8px 20px 1px #909090;
 }
 
 #BottomList div {

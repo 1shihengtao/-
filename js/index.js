@@ -119,4 +119,14 @@ $(function () {
     .on('click', function () {
       $(window).scrollTop(0)
     })
+  $('#div1 li')
+    .eq(0)
+    .hover(
+      function () {
+        $(this).find('.Show').stop().fadeIn()
+      },
+      function () {
+        $(this).find('.Show').stop().fadeOut()
+      }
+    )
 })

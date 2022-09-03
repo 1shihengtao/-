@@ -136,14 +136,13 @@ body {
 
 .dian1::before {
     content: "\e600";
-    src: url('iconfont.woff2?t=1662169198616') format('woff2'),
-        url('iconfont.woff?t=1662169198616') format('woff'),
-        url('iconfont.ttf?t=1662169198616') format('truetype');
-    font-size: 18px;
-    font-style: normal;
-    color: white;
-    color: rgb(241, 119, 88);
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662190521213') format('woff2'),
+        url('iconfont.woff?t=1662190521213') format('woff'),
+        url('iconfont.ttf?t=1662190521213') format('truetype');
     font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -213,6 +212,33 @@ body {
     margin: 0 auto;
     margin-top: 50px;
     color: #757575;
+}
+
+#div1 ul li:nth-of-type(1) .Show {
+    display: none;
+    position: absolute;
+    left: -165px;
+    top: 0;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+}
+
+#div1 ul li:nth-of-type(1) .Show img {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+#div1 ul li:nth-of-type(1) .Show #Mony {
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+    margin-left: 25px;
+    margin-top: 138px;
+    text-align: center;
 }
 
 #div1 .show {
@@ -364,12 +390,11 @@ body {
     top: 5px;
     z-index: 9999999999999;
     content: "\eafe";
-    font-family: 'iconfont';
     src: url('iconfont.woff2?t=1662169198616') format('woff2'),
         url('iconfont.woff?t=1662169198616') format('woff'),
         url('iconfont.ttf?t=1662169198616') format('truetype');
-    font-family: "iconfont" !important;
     font-size: 28px;
+    font-family: "iconfont" !important;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -424,17 +449,17 @@ body {
 
 .nav ul .r::after {
     position: absolute;
-    right: 25px;
+    right: 20px;
+    margin-top: 10px;
     content: "\e60b";
     font-family: 'iconfont';
-    src: url('iconfont.woff2?t=1662169198616') format('woff2'),
-        url('iconfont.woff?t=1662169198616') format('woff'),
-        url('iconfont.ttf?t=1662169198616') format('truetype');
+    src: url('iconfont.woff2?t=1662190521213') format('woff2'),
+        url('iconfont.woff?t=1662190521213') format('woff'),
+        url('iconfont.ttf?t=1662190521213') format('truetype');
     font-family: "iconfont" !important;
-    font-size: 20px;
-    color: white;
-    line-height: 42px;
+    font-size: 16px;
     font-style: normal;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -618,6 +643,8 @@ section .swiper-button-prev {
 }
 
 .k40 img {
+    width: 100%;
+    height: 100%;
     margin: 27px auto;
 }
 
@@ -638,7 +665,7 @@ section .swiper-button-prev {
     float: right;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 12px;
     width: 92px;
     height: 58px;
 }
@@ -647,11 +674,16 @@ section .swiper-button-prev {
     font-size: 16px;
     line-height: 58px;
     margin-left: 13px;
-    color: #09ff00;
+    color: #424242;
 }
 
 .shouji .chakan a:hover {
     color: rgb(230, 87, 21);
+}
+
+.shouji .chakan a::after {
+    content: "🔜";
+    position: absolute;
 }
 
 /* <!-- 手机模块内容 --> */
@@ -667,7 +699,7 @@ section .swiper-button-prev {
 }
 
 .nei .zuida:hover {
-    box-shadow: 2px 2px 10px 2px;
+    box-shadow: 0 0 20px 1px #e2e2e2;
 }
 
 .nei .zuida1 {
@@ -725,22 +757,203 @@ section .swiper-button-prev {
 }
 
 .nei .zuida1 ul li:hover {
-    box-shadow: 2px 2px 10px 2px;
-    color: pink;
+    box-shadow: 0 0 20px 1px #e2e2e2;
 }
 
 /* 底部 */
-.mod_copyright .links {
-    text-align: center;
-    padding-top: 20px;
+footer #divs {
+    width: 1226px;
+    height: 80px;
+    margin: auto;
 }
 
-.mod_copyright .links a {
-    margin: 0 10px;
-    color: #999999;
+#divs {
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.mod_copyright .copyright {
+#divs .ul {
+    display: flex;
     text-align: center;
-    padding-top: 17px;
+}
+
+#divs .ul li {
+    flex: auto;
+    line-height: 80px;
+}
+
+#divs .ul li a {
+    font-size: 16px;
+    color: #616161;
+    font-style: normal;
+}
+
+#divs .ul li:nth-of-type(1)::before {
+    content: "\e635";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662191341635') format('woff2'),
+        url('iconfont.woff?t=1662191341635') format('woff'),
+        url('iconfont.ttf?t=1662191341635') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(2)::before {
+    content: "\e60e";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662191341635') format('woff2'),
+        url('iconfont.woff?t=1662191341635') format('woff'),
+        url('iconfont.ttf?t=1662191341635') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(3)::before {
+    content: "\e606";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662191341635') format('woff2'),
+        url('iconfont.woff?t=1662191341635') format('woff'),
+        url('iconfont.ttf?t=1662191341635') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(4)::before {
+    content: "\e787";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662191341635') format('woff2'),
+        url('iconfont.woff?t=1662191341635') format('woff'),
+        url('iconfont.ttf?t=1662191341635') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(5)::before {
+    content: "\e652";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662191341635') format('woff2'),
+        url('iconfont.woff?t=1662191341635') format('woff'),
+        url('iconfont.ttf?t=1662191341635') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+footer #divss {
+    position: relative;
+    width: 1226px;
+    height: 393px;
+    margin: auto;
+}
+
+#divss dl:nth-of-type(1) {
+    margin-left: 150px;
+}
+
+#divss dl {
+    float: left;
+    width: 160px;
+    margin-top: 20px;
+}
+
+#divss dt {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#divss dd {
+    line-height: 30px;
+}
+
+#divss .divsss {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 252px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+#divss .divsss h2 {
+    color: #ff6700;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#divss .divsss h4 {
+    color: #616161;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#divss .divsss h3 {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #ff6700;
+    margin: auto;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+#divss .divsss h3::before {
+    content: "✉️";
+}
+
+#divss .divsss h3:hover {
+    background-color: #ff6700;
+    color: white;
+}
+
+footer .mod_copyright {
+    height: 266px;
+    background-color: #fafafa;
+}
+
+.mod_copyright .site-info {
+    width: 1226px;
+    height: 100%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.mod_copyright .site-info .container img {
+    width: 83px;
+    height: 23px;
+}
+
+.mod_copyright .site-info h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #3333;
+    font-family: "华文行楷";
+    margin-top: 50px;
+}
+
+.mod_copyright .site-info a {
+    color: #757575;
+    font-style: normal;
+}
+
+.mod_copyright .site-info #img {
+    float: left;
+}
+
+.container {
+    margin-left: 85px;
 }

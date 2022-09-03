@@ -48,10 +48,20 @@ $(function () {
   $('.nav ul')
     .find('.r')
     .on('mouseover', function () {
-      $('.nav ul').find('.neirong').stop().animate({ width: '991px' }, 500)
+      $('.nav ul').find('.neirong').stop().animate(
+        {
+          width: '991px',
+        },
+        500
+      )
     })
     .on('mouseout', function () {
-      $('.nav ul').find('.neirong').stop().animate({ width: 0 }, 500)
+      $('.nav ul').find('.neirong').stop().animate(
+        {
+          width: 0,
+        },
+        500
+      )
     })
   // 搜索
   $('.search').on('mouseover', function () {
@@ -60,4 +70,53 @@ $(function () {
   $('.search').on('mouseout', function () {
     $('.search article').hide().end().find('input').removeClass('bgc')
   })
+  // 固定栏
+  $('#div1 ul')
+    .find('li')
+    .hover(
+      function () {
+        $(this)
+          .find('.imgss')
+          .show()
+          .end()
+          .find('#pp')
+          .css({
+            color: 'rgb(241, 119, 88)',
+          })
+          .end()
+          .siblings()
+          .find('.imgss')
+          .hide()
+          .end()
+          .find('#pp')
+          .css({
+            color: '#757575',
+          })
+      },
+      function () {
+        $(this).find('.imgss').hide().end().find('#pp').css({
+          color: '#757575',
+        })
+      }
+    )
+  $(window).on('scroll', function () {
+    let top = $(window).scrollTop()
+    if (top >= 300) {
+      $('#div1').css({ top: '120px' }).find('.show').show()
+    } else {
+      $('#div1').css({ top: '220px' }).find('.show').hide()
+    }
+  })
+  $('#div1 .show')
+    .hover(
+      function () {
+        $(this).find('.imgss').show().end().find('#pp').css({ color: 'rgb(241, 119, 88)' })
+      },
+      function () {
+        $(this).find('.imgss').hide().end().find('#pp').css({ color: '#757575' })
+      }
+    )
+    .on('click', function () {
+      $(window).scrollTop(0)
+    })
 })

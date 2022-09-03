@@ -136,15 +136,14 @@ body {
 
 .dian1::before {
     content: "\e600";
-    font-family: 'iconfont';
-    src: url('iconfont.woff2?t=1662167809609') format('woff2'),
-        url('iconfont.woff?t=1662167809609') format('woff'),
-        url('iconfont.ttf?t=1662167809609') format('truetype');
-    font-family: "iconfont" !important;
+    src: url('iconfont.woff2?t=1662169198616') format('woff2'),
+        url('iconfont.woff?t=1662169198616') format('woff'),
+        url('iconfont.ttf?t=1662169198616') format('truetype');
     font-size: 18px;
     font-style: normal;
     color: white;
     color: rgb(241, 119, 88);
+    font-family: "iconfont" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -274,7 +273,43 @@ body {
     height: 50px;
     margin-left: 110px;
     margin-top: -45px;
-    border: 1px solid rgb(245, 115, 40);
+    border: 1px solid #e0e0e0;
+}
+
+.bgc {
+    border: 1px solid rgb(241, 119, 88);
+}
+
+.search .one:hover {
+    background-color: rgb(241, 119, 88);
+}
+
+.search::before {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    z-index: 9999999999999;
+    content: "\eafe";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662169198616') format('woff2'),
+        url('iconfont.woff?t=1662169198616') format('woff'),
+        url('iconfont.ttf?t=1662169198616') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 28px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search article {
+    position: absolute;
+    display: none;
+    top: 48px;
+    z-index: 99999999999999;
+    width: 245px;
+    height: 250px;
+    border: 1px solid rgb(241, 119, 88);
+    background-color: white;
 }
 
 .one {
@@ -282,7 +317,7 @@ body {
     width: 48px;
     height: 48px;
     background-color: rgb(255, 255, 255);
-    border-left: 1px solid rgb(245, 115, 40);
+    border-left: 1px solid #e0e0e0;
 }
 
 .two {
@@ -305,11 +340,29 @@ body {
     width: 235px;
     height: 460px;
     z-index: 999;
-    background-color: #999999;
+    background-color: rgba(white, white, white, 0.2);
 }
 
 .nav ul {
+    position: relative;
     margin: 20px 0;
+}
+
+.nav ul .r::after {
+    position: absolute;
+    right: 25px;
+    content: "\e60b";
+    font-family: 'iconfont';
+    src: url('iconfont.woff2?t=1662169198616') format('woff2'),
+        url('iconfont.woff?t=1662169198616') format('woff'),
+        url('iconfont.ttf?t=1662169198616') format('truetype');
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    color: white;
+    line-height: 42px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .nav ul .r {
@@ -332,34 +385,13 @@ body {
 /* 手机下拉菜单 */
 .nav .neirong {
     position: absolute;
-    display: none;
-    top: 0;
-    left: 240px;
-    width: 991px;
+    /* display: none; */
+    top: -20px;
+    left: 235px;
+    /* width: 991px; */
     height: 460px;
-    background-color: rgb(255, 255, 255);
-}
-
-.nav li:hover .neirong {
-    display: block;
-    box-shadow: 2px 2px 10px 2px;
-}
-
-.neirong ul li {
-    float: left;
-    padding: 30px 0;
-    margin-left: 35px;
-    width: 200px;
-    height: 200px;
-}
-
-.neirong ul li img {
-    margin: 5px 20px;
-}
-
-.neirong ul li p {
-    text-align: center;
-    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 0 20px 1px #9e9e9e;
 }
 
 /* 电视下拉菜单 */
@@ -452,7 +484,7 @@ section .swiper-button-prev {
 }
 
 .min2 .one ul li a {
-    color: #fff;
+    color: rgb(200, 200, 200);
     margin-left: 10px;
 }
 

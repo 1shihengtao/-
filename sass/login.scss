@@ -31,9 +31,9 @@ div {
       p {
         float: left;
         font-size: 26px;
-        font-weight: 700;
+        font-weight: 400;
         margin-left: 10px;
-        color: white;
+        color: rgb(109, 109, 109);
       }
       ul {
         float: right;
@@ -84,6 +84,58 @@ div {
       padding: 40px 45px;
       background-color: rgb(26, 26, 26);
       border-radius: 5px;
+      figure {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70px;
+        height: 70px;
+      .loImg {
+        position: absolute;
+        z-index: 99999999999;
+        top: 7px;
+        right: 7px;
+        width: 50px;
+        height: 50px;
+      }
+      big {
+        position: absolute;
+        border-radius: 5px;
+        opacity: .4;
+        width: 0;
+        height: 0;
+        border-left: 50px solid #ff5c00;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        transform: rotate(314deg);
+        margin: -32px 0 0 27px;
+      }
+      }
+      .i1 {
+        display: none;
+        position: absolute;
+        top: 15px;
+        right: 92px;
+        width: 100px;
+        height: 40px;
+        color: black;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: #ff5c00;
+      }
+      .i1::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: -5px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid #ff5c00;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
       div {
         height: 40px;
       }
@@ -102,10 +154,11 @@ div {
         input {
         width: 354px;
         height: 60px;
-        background-color: #838383;
+        background-color: #333333cf;
         margin-bottom: 35px;
         border-radius: 5px;
         padding-left: 20px;
+        border: none;
       }
       input:nth-of-type(3) {
         width: 20px;
@@ -116,7 +169,23 @@ div {
       small {
         font-size: 16px;
       }
-
+      .Pyan {
+        position: absolute;
+        top: 196px;
+        right: 51px;
+        width: 60px;
+        height: 60px;
+        img {
+          position: absolute;
+          left: calc(50% - 10px);
+          top: calc(50% - 10px);
+          width: 20px;
+          height: 20px;
+        }
+        img:nth-of-type(1) {
+          display: none;
+        }
+      }
       }
             button {
         display: block;
@@ -134,7 +203,7 @@ div {
         height: 35px;
         margin-top: 10px;
         p {
-          font-size: 18px;
+          font-size: 17px;
           flex: 1;
           color: #ff5c00;
         }

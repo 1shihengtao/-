@@ -60,8 +60,10 @@ $(function () {
         },
       }).then((res) => {
         if (res.code == 1) {
-          localStorage.setItem({ UserData: JSON.parse(res.data) })
-          location.assign('../index.html')
+          // 把用户的信息存储到本地
+          localStorage.setItem('UserData', JSON.stringify(res.data))
+          // 跳转时把用户名传过去
+          location.assign(`../index.html?uname:${res.data.username}`)
         } else {
           alert('用户名或密码不存在，请先注册后使用')
         }

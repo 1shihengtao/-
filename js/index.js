@@ -129,4 +129,8 @@ $(function () {
         $(this).find('.Show').stop().fadeOut()
       }
     )
+  // 接收传过来的值
+  let name = location.search
+  name = name.split(':')[1]
+  $('.min .zuoce').find('ul').html(`<li><a>当前用户名：${name}</a</li>`)
 })

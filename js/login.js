@@ -3,10 +3,10 @@ $(function () {
     .find('.lis a')
     .hover(
       function () {
-        $(this).css({ color: '#ba3500e3' }).siblings().slideDown()
+        $(this).css({ color: '#ba3500e3' }).siblings().stop().slideDown()
       },
       function () {
-        $(this).css({ color: '#838383' }).siblings().slideUp()
+        $(this).css({ color: '#838383' }).siblings().stop().slideUp()
       }
     )
   $('article figure').hover(
@@ -61,7 +61,7 @@ $(function () {
       }).then((res) => {
         if (res.code == 1) {
           // 把用户的信息存储到本地
-          localStorage.setItem('UserData', JSON.stringify(res.data))
+          sessionStorage.setItem('UserData', JSON.stringify(res.data))
           // 跳转时把用户名传过去
           location.assign(`../index.html?uname:${res.data.username}`)
         } else {

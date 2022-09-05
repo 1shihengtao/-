@@ -78,7 +78,6 @@ body {
 /* 导航栏里的内容 */
 .min {
     position: relative;
-    height: 40px;
     width: 1226px;
     margin: auto;
 }
@@ -698,8 +697,13 @@ section .swiper-button-prev {
     transition: all 0.5s ease;
 }
 
+.nei .zuida img {
+    width: 100%;
+    height: 100%;
+}
+
 .nei .zuida:hover {
-    box-shadow: 0 0 20px 1px #e2e2e2;
+    box-shadow: 0 0 20px 1px #c2c2c2;
 }
 
 .nei .zuida1 {
@@ -715,44 +719,32 @@ section .swiper-button-prev {
     float: left;
     width: 230px;
     height: 300px;
-    margin-right: 20px;
     background-color: rgb(255, 255, 255);
     transition: all 0.5s ease;
-}
-
-.nei .zuida1 ul li:nth-child(4) {
-    margin-right: 0;
-}
-
-.nei .zuida1 ul li:last-child {
-    margin-right: 0;
-}
-
-.nei .zuida1 ul li:nth-child(n + 5) {
-    margin-top: 12px;
+    margin: 0 0 12px 13px;
+    text-align: center;
 }
 
 .nei .zuida1 ul li img {
     width: 160px;
     height: 160px;
-    margin-left: 35px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .zuida1 ul li h3 {
     font-size: 14px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 .zuida1 ul li p {
     font-size: 12px;
-    margin-left: 60px;
-    margin-bottom: 7px;
+    /* margin-left: 60px;
+    margin-bottom: 7px; */
 }
 
 .zuida1 ul li span {
     font-size: 14px;
-    margin-left: 85px;
+    /* margin-left: 85px; */
     color: rgb(230, 87, 21);
 }
 

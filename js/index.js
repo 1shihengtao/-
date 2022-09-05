@@ -1,8 +1,12 @@
 $(function () {
   // 轮播图
   var swiper = new Swiper('.mySwiper', {
-    autoplay: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
     loop: true,
+    centeredSlides: true,
     spaceBetween: 30,
     effect: 'fade',
     navigation: {
@@ -132,5 +136,39 @@ $(function () {
   // 接收传过来的值
   let name = location.search
   name = name.split(':')[1]
-  $('.min .zuoce').find('ul').html(`<li><a>当前用户名：${name}</a</li>`)
+  if (name) {
+    $('.min .zuoce').find('ul').prepend(`<li><a>当前用户名：${name}</a</li>`)
+  } else {
+    $('.min .zuoce').find('ul').prepend(`<li><a>当前未登录</a</li>`)
+  }
+  // 发请求获取商品数据
+  $.ajax({
+    url: 'http://jx.xuzhixiang.top/ap/api/allproductlist.php',
+    type: 'get',
+    data: {
+      // 获取139280的数据
+      uid: 139280,
+    },
+  }).then((res) => {
+    // 把数据存储到本地
+    res.data = res.data.splice(1, 8)
+    localStorage.setItem('PhoneData', JSON.stringify(res.data))
+  })
+  // 展示数据
+  let Phone = JSON.parse(localStorage.getItem('PhoneData'))
+  // 遍历数据
+  let str = ''
+  Phone.forEach((res, arr) => {
+    str = `
+                    <ul>
+                        <li>
+                            <img src="${res.pimg}" alt="" />
+                            <h3>${res.pname}</h3>
+                            <p>${res.pdesc}</p>
+                            <span>${res.pprice}元起</span>
+                        </li>
+                    </ul>
+      `
+    $('.shouji .nei').find('.zuida1').prepend(str)
+  })
 })

@@ -33,10 +33,10 @@ $(function () {
   // 头部下拉二维码
   $('.dian').hover(
     function () {
-      $('.xiala').slideDown()
+      $('.xiala').stop().slideDown()
     },
     function () {
-      $('.xiala').slideUp()
+      $('.xiala').stop().slideUp()
     }
   )
   // 头部购物车、
@@ -137,7 +137,7 @@ $(function () {
   let name = location.search
   name = name.split(':')[1]
   if (name) {
-    $('.min .zuoce').find('ul').prepend(`<li><a>当前用户名：${name}</a</li>`)
+    $('.min .zuoce').find('ul').prepend(`<li><a>当前用户名：${name}</a</li>`).eq().find('.hide').hide()
   } else {
     $('.min .zuoce').find('ul').prepend(`<li><a>当前未登录</a</li>`)
   }

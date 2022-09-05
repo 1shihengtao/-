@@ -677,11 +677,11 @@ section .swiper-button-prev {
 }
 
 .shouji .chakan a:hover {
-    color: rgb(230, 87, 21);
+    color: rgb(6, 201, 255);
 }
 
 .shouji .chakan a::after {
-    content: "🔜";
+    content: "➡️";
     position: absolute;
 }
 

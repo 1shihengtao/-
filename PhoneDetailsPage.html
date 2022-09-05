@@ -5,9 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>小米手机/小米平板 - 小米商城</title>
+    <link rel="stylesheet" href="./CSS/Theloginpageisinitialized.css" />
     <link rel="stylesheet" href="CSS/PhoneDetailsPage.css" />
     <link rel="stylesheet" href="./swiper-5.4.5/package/css/swiper.min.css" />
     <link rel="shortcut icon" href="./imge/logo-mi2.png" />
+    <style>
+      /* 固定栏 */
+      #div1 {
+        position: fixed;
+        z-index: 99999999;
+        top: 220px;
+        right: 0;
+        width: 84px;
+        height: 455px;
+        text-align: center;
+      }
+
+      #div1 ul {
+        display: flex;
+        width: 84px;
+        height: 455px;
+        flex-direction: column;
+        padding: 0;
+      }
+
+      #div1 ul li {
+        position: relative;
+        flex: 1;
+        border: 1px solid #e2e2e2;
+      }
+
+      #div1 ul li img {
+        position: absolute;
+        left: calc(50% - 17px);
+        width: 35px;
+        height: 35px;
+        margin-top: 10px;
+      }
+
+      #div1 ul li img:nth-of-type(2) {
+        display: none;
+      }
+
+      #div1 ul li #pp {
+        text-align: center;
+        font-size: 14px;
+        bottom: 0;
+        margin: 0 auto;
+        margin-top: 50px;
+        color: #757575;
+      }
+
+      #div1 ul li:nth-of-type(1) .Show {
+        display: none;
+        position: absolute;
+        left: -165px;
+        top: 0;
+        width: 150px;
+        height: 200px;
+        text-align: center;
+        background-color: white;
+      }
+
+      #div1 ul li:nth-of-type(1) .Show img {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        left: calc(50% - 50px);
+        top: 10px;
+      }
+
+      #div1 ul li:nth-of-type(1) .Show #Mony {
+        width: 100px;
+        height: 100px;
+        font-size: 16px;
+        margin-left: 25px;
+        margin-top: 138px;
+        text-align: center;
+      }
+
+      #div1 .show {
+        display: none;
+        width: 84px;
+        height: 91px;
+        background-color: white;
+        border: 1px solid #e2e2e2;
+        margin-top: 20px;
+      }
+
+      #div1 .show img {
+        position: absolute;
+        left: calc(50% - 15px);
+        width: 30px;
+        height: 30px;
+        margin-top: 15px;
+      }
+
+      #div1 .show img:nth-of-type(2) {
+        display: none;
+      }
+
+      #div1 .show #pp {
+        text-align: center;
+        font-size: 14px;
+        bottom: 0;
+        margin: 0 auto;
+        margin-top: 50px;
+        color: #757575;
+      }
+    </style>
   </head>
   <body>
     <!-- 轮播 -->
@@ -44,6 +151,45 @@
       <div class="lists"></div>
     </aside>
     <i class="fo"></i>
+    <!-- 固定栏 -->
+    <div id="div1">
+      <ul>
+        <li>
+          <img src="./imge/douable/App1.png" />
+          <img src="./imge/douable/App2.png" class="imgss" />
+          <p id="pp">手机APP</p>
+          <div class="Show">
+            <img src="./imge/douable/二维码.png" alt="" />
+            <p id="Mony">扫码领取新人百元红包</p>
+          </div>
+        </li>
+        <li>
+          <img src="./imge/douable/个人1.png" />
+          <img src="./imge/douable/个人2.png" class="imgss" />
+          <p id="pp">个人中心</p>
+        </li>
+        <li>
+          <img src="./imge/douable/维修1.png" />
+          <img src="./imge/douable/维修2.png" class="imgss" />
+          <p id="pp">售后服务</p>
+        </li>
+        <li>
+          <img src="./imge/douable/客服1.png" />
+          <img src="./imge/douable/客服2.png" class="imgss" />
+          <p id="pp">人工客服</p>
+        </li>
+        <li>
+          <img src="./imge/douable/购物车1.png" />
+          <img src="./imge/douable/购物车2.png" class="imgss" />
+          <p id="pp">购物车</p>
+        </li>
+      </ul>
+      <div class="show">
+        <img src="./imge/douable/返回1.png" />
+        <img src="./imge/douable/返回2.png" class="imgss" />
+        <p id="pp">回顶部</p>
+      </div>
+    </div>
     <script src="./js/jQuery.min.js"></script>
     <script src="./swiper-5.4.5/package/js/swiper.min.js"></script>
     <script src="./js/PhoneDetailsPage.js"></script>

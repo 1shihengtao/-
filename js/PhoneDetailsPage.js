@@ -30,4 +30,63 @@ $(function () {
       $('aside .lists').append(str)
     })
   })
+  // 固定栏
+  $('#div1 ul')
+    .find('li')
+    .hover(
+      function () {
+        $(this)
+          .find('.imgss')
+          .show()
+          .end()
+          .find('#pp')
+          .css({
+            color: 'rgb(241, 119, 88)',
+          })
+          .end()
+          .siblings()
+          .find('.imgss')
+          .hide()
+          .end()
+          .find('#pp')
+          .css({
+            color: '#757575',
+          })
+      },
+      function () {
+        $(this).find('.imgss').hide().end().find('#pp').css({
+          color: '#757575',
+        })
+      }
+    )
+  $(window).on('scroll', function () {
+    let top = $(window).scrollTop()
+    if (top >= 1500) {
+      $('#div1').css({ top: '120px' }).find('.show').show()
+    } else {
+      $('#div1').css({ top: '220px' }).find('.show').hide()
+    }
+  })
+  $('#div1 .show')
+    .hover(
+      function () {
+        $(this).find('.imgss').show().end().find('#pp').css({ color: 'rgb(241, 119, 88)' })
+      },
+      function () {
+        $(this).find('.imgss').hide().end().find('#pp').css({ color: '#757575' })
+      }
+    )
+    .on('click', function () {
+      $(window).scrollTop(0)
+    })
+  $('#div1 li')
+    .eq(0)
+    .hover(
+      function () {
+        $(this).find('.Show').stop().fadeIn()
+      },
+      function () {
+        $(this).find('.Show').stop().fadeOut()
+      }
+    )
 })

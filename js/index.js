@@ -157,7 +157,7 @@ $(function () {
                         </li>
                     </ul>
       `
-    $('.shouji .nei').find('.zuida1').prepend(str)
+    $('.nei #phone').prepend(str)
   })
   // 头部下拉菜单数据
   let SelStr = ''
@@ -191,7 +191,7 @@ $(function () {
                             <i>${res.pname}</i>
                         </li>
         `
-        $('.neirong ul').append(str)
+        $('.neirong ul').prepend(str)
       })
     }
   })
@@ -199,8 +199,21 @@ $(function () {
   $.get('http://jx.xuzhixiang.top/ap/api/allproductlist.php', {
     uid: 139439,
   }).then((res) => {
-    console.log(res)
     // 存储本地
     localStorage.setItem('ComputedData', JSON.stringify(res.data))
+    let str = ''
+    res.data.forEach((res) => {
+      str = `
+                          <ul>
+                        <li>
+                            <img src="${res.pimg}" alt="" />
+                            <h3>${res.pname}</h3>
+                            <p>${res.pdesc}</p>
+                            <span>${res.pprice}元起</span>
+                        </li>
+                    </ul>
+      `
+      $('.nei #com').prepend(str)
+    })
   })
 })

@@ -19,17 +19,14 @@ $(function () {
     },
   })
   // 导航栏
-  $('.xuanze ul')
-    .find('.Li')
-    .hover(
-      // 有问题
-      function () {
-        $('#BottomList').stop().slideDown()
-      },
-      function () {
-        $('#BottomList').stop().slideUp()
-      }
-    )
+  $('.xuanze .Li').on('click', function () {
+    $('#BottomList').stop().slideDown()
+    return false
+  })
+  $('.min').on('click', function () {
+    $('figcaption').hide()
+    return false
+  })
   // 头部下拉二维码
   $('.dian').hover(
     function () {
@@ -49,24 +46,12 @@ $(function () {
     }
   )
   // 侧边栏
-  $('.nav ul')
-    .find('.r')
-    .on('mouseover', function () {
-      $('.nav ul').find('.neirong').stop().animate(
-        {
-          width: '991px',
-        },
-        500
-      )
-    })
-    .on('mouseout', function () {
-      $('.nav ul').find('.neirong').stop().animate(
-        {
-          width: 0,
-        },
-        500
-      )
-    })
+  $('.nav').on('mouseover', function () {
+    $('.nav .neirong').show()
+  })
+  $('.nav').on('mouseout', function () {
+    $('.nav .neirong').hide()
+  })
   // 搜索
   $('.search').on('mouseover', function () {
     $('.search input').addClass('bgc').end().find('article').show()
@@ -137,11 +122,14 @@ $(function () {
   let name = location.search
   name = name.split(':')[1]
   if (name) {
-    $('.min .zuoce').find('ul').prepend(`<li><a>当前用户名：${name}</a</li>`).eq().find('.hide').hide()
+    $('.min .zuoce').find('ul').prepend(`<li><a>当前用户名：${name}</a</li>`).find('.hide').hide()
   } else {
-    $('.min .zuoce').find('ul').prepend(`<li><a>当前未登录</a</li>`)
+    $('.min .zuoce').find('ul').prepend(`<li><a>当前未登录</a</li>`).find('.hide').show()
   }
-  // 发请求获取商品数据
+  $('.hide').on('click', function () {
+    location.assign('./login.html')
+  })
+  // 发请求获取商品数据（手机数据）
   $.ajax({
     url: 'http://jx.xuzhixiang.top/ap/api/allproductlist.php',
     type: 'get',
@@ -170,5 +158,49 @@ $(function () {
                     </ul>
       `
     $('.shouji .nei').find('.zuida1').prepend(str)
+  })
+  // 头部下拉菜单数据
+  let SelStr = ''
+  let SelData = JSON.parse(localStorage.getItem('PhoneData'))
+  SelData = SelData.splice(1, 6)
+  SelData.forEach((res) => {
+    SelStr = `
+                <li data-id="${res.pid}">
+                    <img src="${res.pimg}" alt="">
+                    <p>${res.pname}</p>
+                    <p class="PColor">${res.pprice}元起</p>
+                </li>
+    `
+    $('#BottomList ul').append(SelStr)
+  })
+  // 侧边栏数据
+  $.ajax({
+    url: 'http://jx.xuzhixiang.top/ap/api/allproductlist.php',
+    type: 'get',
+    data: {
+      uid: 139436,
+    },
+  }).then((res) => {
+    if ((res.msg = '查询成功111')) {
+      localStorage.setItem('SlideData', JSON.stringify(res.data))
+      let str = ''
+      res.data.forEach((res) => {
+        str = `
+                                  <li>
+                            <img src="${res.pimg}" alt="">
+                            <i>${res.pname}</i>
+                        </li>
+        `
+        $('.neirong ul').append(str)
+      })
+    }
+  })
+  // 获取笔记本数据
+  $.get('http://jx.xuzhixiang.top/ap/api/allproductlist.php', {
+    uid: 139439,
+  }).then((res) => {
+    console.log(res)
+    // 存储本地
+    localStorage.setItem('ComputedData', JSON.stringify(res.data))
   })
 })

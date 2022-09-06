@@ -1,0 +1,518 @@
+@charset "UTF-8";
+/* 把我们所有标签的内外边距清零 */
+* {
+  margin: 0;
+  padding: 0;
+  /* css3盒子模型 */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "宋体", sans-serif;
+  /* 默认有灰色边框我们需要手动去掉 */
+  border: 0;
+  outline: none;
+}
+
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "宋体", sans-serif;
+  color: #666;
+}
+
+.hide,
+.none {
+  display: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* 头部 */
+header {
+  height: 102px;
+}
+header div {
+  display: flex;
+  width: 1226px;
+  height: 100%;
+  margin: auto;
+}
+header div .Left {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+header div .Left img {
+  width: 48px;
+  height: 48px;
+}
+header div .Left h2 {
+  font-weight: 400;
+  color: #424242;
+  font-size: 28px;
+  margin-left: 55px;
+}
+header div .Right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+header div .Right p {
+  margin: 0 10px;
+}
+
+aside {
+  height: 340px;
+  background-color: #F5F5F5;
+  padding-top: 38px;
+}
+aside div {
+  width: 1226px;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+aside div .Top {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+}
+aside div .Top .top1 {
+  float: left;
+  width: 110px;
+  height: 70px;
+  margin: 0;
+}
+aside div .Top .top1 input {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+aside div .Top .top1 p {
+  width: 70px;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+  margin-top: 22px;
+}
+aside div .Top em {
+  float: left;
+  display: block;
+  width: 120px;
+  height: 70px;
+}
+aside div .Top .top2 {
+  float: left;
+  width: 380px;
+  height: 70px;
+  margin: 0;
+  text-align: left;
+  font-size: 16px;
+  color: black;
+  line-height: 70px;
+}
+aside div .Top .top3 {
+  float: left;
+  width: 158px;
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  line-height: 70px;
+  margin: 0;
+}
+aside div .Top .top4 {
+  float: left;
+  width: 150px;
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  line-height: 70px;
+  margin: 0;
+}
+aside div .Top .top5 {
+  float: left;
+  width: 201px;
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  line-height: 70px;
+  margin: 0;
+}
+aside div .Top .top6 {
+  float: left;
+  width: 80px;
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  line-height: 70px;
+  margin: 0;
+}
+aside div .Bottom {
+  width: 100%;
+  height: 116px;
+}
+aside div .Bottom .top1 {
+  float: left;
+  width: 110px;
+  height: 85px;
+  margin: 0;
+}
+aside div .Bottom .top1 input {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+aside div .top2 {
+  float: left;
+  width: 400px;
+  height: 85px;
+  margin: 0;
+  text-align: left;
+  margin-right: 100px;
+}
+aside div .top2 img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-right: 40px;
+}
+aside div .top2 p {
+  font-size: 18px;
+  color: black;
+  line-height: 85px;
+}
+aside div .top3 {
+  float: left;
+  width: 158px;
+  height: 85px;
+}
+aside div .top3 p {
+  font-size: 18px;
+  color: black;
+  line-height: 85px;
+}
+aside div .top4 {
+  float: left;
+  width: 150px;
+  height: 85px;
+  margin-left: 10px;
+}
+aside div .top4 div {
+  width: 100%;
+  height: 100%;
+}
+aside div .top4 div i, aside div .top4 div input {
+  float: left;
+  line-height: 85px;
+}
+aside div .top4 div i {
+  width: 20px;
+  height: 20px;
+}
+aside div .top4 div input {
+  width: 110px;
+  height: 38px;
+  margin-top: 25px;
+  padding-left: 52px;
+}
+aside div .top5 {
+  float: left;
+  width: 201px;
+  height: 85px;
+}
+aside div .top5 p {
+  font-size: 18px;
+  color: black;
+  line-height: 85px;
+  color: #ff6700;
+}
+aside div .top6 {
+  float: left;
+  width: 80px;
+  height: 85px;
+}
+aside div .top6 p {
+  line-height: 85px;
+  text-align: center;
+  margin-right: 18px;
+}
+aside div figure {
+  position: absolute;
+  top: 360px;
+  width: 1226px;
+  height: 50px;
+  background-color: #fff;
+}
+aside div figure div {
+  background-color: #fff;
+}
+aside div figure div:nth-of-type(1) p {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  color: black;
+  line-height: 50px;
+}
+aside div figure div:nth-of-type(2) i, aside div figure p {
+  float: left;
+  font-size: 16px;
+  color: black;
+  line-height: 50px;
+}
+aside div figure div:nth-of-type(2) p {
+  width: 210px;
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ff6700;
+}
+aside div figure div:nth-of-type(2) i {
+  margin-right: 100px;
+}
+aside div figure div:nth-of-type(1) {
+  width: 350px;
+  margin: 0;
+}
+aside div figure div:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 435px;
+}
+
+/* 底部 */
+footer #divs {
+  width: 1226px;
+  height: 80px;
+  margin: auto;
+}
+
+#divs {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#divs .ul {
+  display: flex;
+  text-align: center;
+}
+
+#divs .ul li {
+  flex: auto;
+  line-height: 80px;
+}
+
+#divs .ul li a {
+  font-size: 16px;
+  color: #616161;
+  font-style: normal;
+}
+
+#divs .ul li:nth-of-type(1)::before {
+  content: "\e635";
+  font-family: "iconfont";
+  src: url("iconfont.woff2?t=1662191341635") format("woff2"), url("iconfont.woff?t=1662191341635") format("woff"), url("iconfont.ttf?t=1662191341635") format("truetype");
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(2)::before {
+  content: "\e60e";
+  font-family: "iconfont";
+  src: url("iconfont.woff2?t=1662191341635") format("woff2"), url("iconfont.woff?t=1662191341635") format("woff"), url("iconfont.ttf?t=1662191341635") format("truetype");
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(3)::before {
+  content: "\e606";
+  font-family: "iconfont";
+  src: url("iconfont.woff2?t=1662191341635") format("woff2"), url("iconfont.woff?t=1662191341635") format("woff"), url("iconfont.ttf?t=1662191341635") format("truetype");
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(4)::before {
+  content: "\e787";
+  font-family: "iconfont";
+  src: url("iconfont.woff2?t=1662191341635") format("woff2"), url("iconfont.woff?t=1662191341635") format("woff"), url("iconfont.ttf?t=1662191341635") format("truetype");
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#divs .ul li:nth-of-type(5)::before {
+  content: "\e652";
+  font-family: "iconfont";
+  src: url("iconfont.woff2?t=1662191341635") format("woff2"), url("iconfont.woff?t=1662191341635") format("woff"), url("iconfont.ttf?t=1662191341635") format("truetype");
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+footer #divss {
+  position: relative;
+  width: 1226px;
+  height: 393px;
+  margin: auto;
+}
+
+#divss dl:nth-of-type(1) {
+  margin-left: 150px;
+}
+
+#divss dl {
+  float: left;
+  width: 160px;
+  margin-top: 20px;
+}
+
+#divss dt {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#divss dd {
+  line-height: 30px;
+}
+
+#divss .divsss {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 252px;
+  border-left: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+#divss .divsss h2 {
+  color: #ff6700;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+#divss .divsss h4 {
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+#divss .divsss h3 {
+  width: 120px;
+  height: 30px;
+  border: 1px solid #ff6700;
+  margin: auto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+#divss .divsss h3::before {
+  content: "✉️";
+}
+
+#divss .divsss h3:hover {
+  background-color: #ff6700;
+  color: white;
+}
+
+footer .mod_copyright {
+  height: 266px;
+  background-color: #fafafa;
+}
+
+.mod_copyright .site-info {
+  width: 1226px;
+  height: 100%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.mod_copyright .site-info .container img {
+  width: 83px;
+  height: 23px;
+}
+
+.mod_copyright .site-info h1 {
+  text-align: center;
+  font-size: 25px;
+  color: rgba(51, 51, 51, 0.2);
+  font-family: "华文行楷";
+  margin-top: 50px;
+}
+
+.mod_copyright .site-info a {
+  color: #757575;
+  font-style: normal;
+}
+
+.mod_copyright .site-info #img {
+  float: left;
+}
+
+.container {
+  margin-left: 85px;
+}
+/*# sourceMappingURL=ShoppingCart.css.map */

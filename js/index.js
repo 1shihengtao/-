@@ -186,15 +186,22 @@ $(function () {
       let str = ''
       res.data.forEach((res) => {
         str = `
-                                  <li>
-                            <img src="${res.pimg}" alt="">
-                            <i>${res.pname}</i>
-                        </li>
+          <li data-id=${res.pid} id="li">
+              <img src="${res.pimg}" alt="">
+              <i>${res.pname}</i>
+          </li>
         `
         $('.neirong ul').prepend(str)
       })
     }
+    $('.neirong ul')
+      .find('li')
+      .on('click', function () {
+        let id = $(this).attr('data-id')
+        location.assign(`../ShoppingCart.html?id=${id}`)
+      })
   })
+
   // 获取笔记本数据
   $.get('http://jx.xuzhixiang.top/ap/api/allproductlist.php', {
     uid: 139439,
@@ -205,7 +212,7 @@ $(function () {
     res.data.forEach((res) => {
       str = `
                           <ul>
-                        <li>
+                        <li data-id=${res.pid}>
                             <img src="${res.pimg}" alt="" />
                             <h3>${res.pname}</h3>
                             <p>${res.pdesc}</p>
@@ -215,5 +222,22 @@ $(function () {
       `
       $('.nei #com').prepend(str)
     })
+    $('#com ul')
+      .find('li')
+      .on('click', function () {
+        let id = $(this).attr('data-id')
+        location.assign(`../ShoppingCart.html?id=${id}`)
+      })
   })
+  // 点击购物车跳转
+  $('.zuoce .dian1').on('click', function () {
+    location.assign(`../ShoppingCart.html`)
+  })
+  // 点击下拉菜单里的数据时 跳转购物车 + 传参数
+  $('#BottomList ul')
+    .find('li')
+    .on('click', function () {
+      let SelId = $(this).attr('data-id')
+      location.assign(`../ShoppingCart.html?id=${SelId}`)
+    })
 })

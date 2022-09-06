@@ -64,6 +64,9 @@ $(function () {
           sessionStorage.setItem('UserData', JSON.stringify(res.data))
           // 跳转时把用户名传过去
           location.assign(`../index.html?uname:${res.data.username}`)
+          if ($('.yes').prop('checked')) {
+            $('.yes').css({ width: '100px' })
+          }
         } else {
           alert('用户名或密码不存在，请先注册后使用')
         }

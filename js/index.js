@@ -91,18 +91,32 @@ $(function () {
   $(window).on('scroll', function () {
     let top = $(window).scrollTop()
     if (top >= 300) {
-      $('#div1').css({ top: '120px' }).find('.show').show()
+      $('#div1')
+        .css({
+          top: '120px',
+        })
+        .find('.show')
+        .show()
     } else {
-      $('#div1').css({ top: '220px' }).find('.show').hide()
+      $('#div1')
+        .css({
+          top: '220px',
+        })
+        .find('.show')
+        .hide()
     }
   })
   $('#div1 .show')
     .hover(
       function () {
-        $(this).find('.imgss').show().end().find('#pp').css({ color: 'rgb(241, 119, 88)' })
+        $(this).find('.imgss').show().end().find('#pp').css({
+          color: 'rgb(241, 119, 88)',
+        })
       },
       function () {
-        $(this).find('.imgss').hide().end().find('#pp').css({ color: '#757575' })
+        $(this).find('.imgss').hide().end().find('#pp').css({
+          color: '#757575',
+        })
       }
     )
     .on('click', function () {
@@ -141,15 +155,12 @@ $(function () {
     // 把数据存储到本地
     res.data = res.data.splice(1, 8)
     localStorage.setItem('PhoneData', JSON.stringify(res.data))
-  })
-  // 展示数据
-  let Phone = JSON.parse(localStorage.getItem('PhoneData'))
-  // 遍历数据
-  let str = ''
-  Phone.forEach((res, arr) => {
-    str = `
+    // 遍历数据
+    let str = ''
+    res.data.forEach((res, arr) => {
+      str = `
                     <ul>
-                        <li>
+                        <li data-id=${res.pid}>
                             <img src="${res.pimg}" alt="" />
                             <h3>${res.pname}</h3>
                             <p>${res.pdesc}</p>
@@ -157,8 +168,16 @@ $(function () {
                         </li>
                     </ul>
       `
-    $('.nei #phone').prepend(str)
+      $('.nei #phone').prepend(str)
+    })
+    $('#phone ul')
+      .find('li')
+      .on('click', function () {
+        let id = $(this).attr('data-id')
+        location.assign(`../ShoppingCart.html?id=${id}`)
+      })
   })
+
   // 头部下拉菜单数据
   let SelStr = ''
   let SelData = JSON.parse(localStorage.getItem('PhoneData'))
@@ -240,4 +259,46 @@ $(function () {
       let SelId = $(this).attr('data-id')
       location.assign(`../ShoppingCart.html?id=${SelId}`)
     })
+  // 搜索框数据
+  $.ajax({
+    url: 'http://localhost:3000/Phone',
+    type: 'get',
+  }).then((res) => {
+    let str = ''
+    setInterval(() => {
+      res.forEach((res) => {
+        // 随机索引
+        let idx = Math.ceil(Math.random() * 7)
+        str = `
+          <input type="search" class="two" placeholder="${res[idx]}" autofocus />
+        `
+      })
+      $('.xuanze .search').append(str)
+    }, 5000)
+    // 搜索下拉框里的数据
+    let SelStr = ''
+    res.forEach((res) => {
+      for (let i in res) {
+        SelStr = `
+          <li id="lis">${res[i]}</li>
+        `
+        $('.search article').find('ul').append(SelStr)
+      }
+      $('article #lis').hover(
+        function () {
+          $(this)
+            .css({
+              'background-color': '#e2e2e2',
+              color: 'white',
+            })
+            .siblings()
+            .css({
+              'background-color': '',
+              color: '',
+            })
+        },
+        function () {}
+      )
+    })
+  })
 })

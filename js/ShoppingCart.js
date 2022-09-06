@@ -15,10 +15,12 @@ $(function () {
   let SelData = JSON.parse(localStorage.getItem('PhoneData'))
   let SlideData = JSON.parse(localStorage.getItem('SlideData'))
   let ComputedData = JSON.parse(localStorage.getItem('ComputedData'))
+  let PhoneData = JSON.parse(localStorage.getItem('PhoneData'))
   // 遍历数据 找到和传过来的id相同的
   let newData1 = SelData.find((res) => SelId == res.pid)
   let newData2 = SlideData.find((res) => SelId == res.pid)
   let newData3 = ComputedData.find((res) => SelId == res.pid)
+  let newData4 = PhoneData.find((res) => SelId == res.pid)
   let ShopStr = ''
   // 把数据渲染到页面
   for (let res in newData1) {
@@ -133,6 +135,45 @@ $(function () {
                     </div>
                     <div>
                         <i>合计：${newData3.pprice}元</i>
+                        <p>去结算</p>
+                    </div>
+                </figure>
+    `
+    }
+  }
+  for (let res in newData4) {
+    if (SelId == newData4) {
+      ShopStr = `
+                <div class="top1">
+                    <input type="checkbox" class="ipts">
+                </div>
+                <em></em>
+                <div class="top2">
+                <img src="${newData4.pimg}">
+                <p>${newData4.pname}</p>
+                </div>
+                <div class="top3">
+                    <p>${newData4.pprice}</p>
+                </div>
+                <div class="top4">
+                    <div>
+                        <i class="jian">➖</i>
+                        <input type="text" value="1" class='val'>
+                        <i class="jia">➕</i>
+                    </div>
+                </div>
+                <div class="top5">
+                    <p>${newData4.pprice}</p>
+                </div>
+                <div class="top6">
+                    <p class="delete" data-id=${newData4.pid}>❌</p>
+                </div>
+                <figure>
+                    <div>
+                      <p>已选择：1件</p>
+                    </div>
+                    <div>
+                        <i>合计：${newData4.pprice}元</i>
                         <p>去结算</p>
                     </div>
                 </figure>

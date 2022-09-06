@@ -402,12 +402,27 @@ body {
 .search article {
     position: absolute;
     display: none;
-    top: 48px;
+    top: 50px;
     z-index: 99999999999999;
     width: 245px;
     height: 250px;
     border: 1px solid rgb(241, 119, 88);
     background-color: white;
+}
+
+.search article ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: auto;
+    margin: 0;
+}
+
+.search article ul li {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
 }
 
 .one {
@@ -438,7 +453,7 @@ body {
     width: 235px;
     height: 460px;
     z-index: 999;
-    background-color: rgba(white, white, white, 0.2);
+    background: rgba(105, 101, 101, .6);
 }
 
 .nav ul {

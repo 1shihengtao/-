@@ -16,11 +16,13 @@ $(function () {
   let SlideData = JSON.parse(localStorage.getItem('SlideData'))
   let ComputedData = JSON.parse(localStorage.getItem('ComputedData'))
   let PhoneData = JSON.parse(localStorage.getItem('PhoneData'))
+  let ProductShowcase = JSON.parse(localStorage.getItem('ProductShowcase'))
   // 遍历数据 找到和传过来的id相同的
   let newData1 = SelData.find((res) => SelId == res.pid)
   let newData2 = SlideData.find((res) => SelId == res.pid)
   let newData3 = ComputedData.find((res) => SelId == res.pid)
   let newData4 = PhoneData.find((res) => SelId == res.pid)
+  let newData5 = ProductShowcase.find((res) => SelId == res.pid)
   let ShopStr = ''
   // 把数据渲染到页面
   for (let res in newData1) {
@@ -58,6 +60,7 @@ $(function () {
                         <i>合计：${newData1.pprice}元</i>
                         <p>去结算</p>
                     </div>
+                    <button>进入商品详情页</button>
                 </figure>
     `
     }
@@ -97,6 +100,7 @@ $(function () {
                         <i>合计：${newData2.pprice}元</i>
                         <p>去结算</p>
                     </div>
+                    <button>进入商品详情页</button>
                 </figure>
     `
     }
@@ -136,12 +140,13 @@ $(function () {
                         <i>合计：${newData3.pprice}元</i>
                         <p>去结算</p>
                     </div>
+                    <button>进入商品详情页</button>
                 </figure>
     `
     }
   }
   for (let res in newData4) {
-    if (SelId == newData4) {
+    if (SelId == newData4.pid) {
       ShopStr = `
                 <div class="top1">
                     <input type="checkbox" class="ipts">
@@ -175,6 +180,47 @@ $(function () {
                         <i>合计：${newData4.pprice}元</i>
                         <p>去结算</p>
                     </div>
+                    <button>进入商品详情页</button>
+                </figure>
+    `
+    }
+  }
+  for (let res in newData5) {
+    if (SelId == newData5.pid) {
+      ShopStr = `
+                <div class="top1">
+                    <input type="checkbox" class="ipts">
+                </div>
+                <em></em>
+                <div class="top2">
+                <img src="${newData5.pimg}">
+                <p>${newData5.pname}</p>
+                </div>
+                <div class="top3">
+                    <p>${newData5.pprice}</p>
+                </div>
+                <div class="top4">
+                    <div>
+                        <i class="jian">➖</i>
+                        <input type="text" value="1" class='val'>
+                        <i class="jia">➕</i>
+                    </div>
+                </div>
+                <div class="top5">
+                    <p>${newData5.pprice}</p>
+                </div>
+                <div class="top6">
+                    <p class="delete" data-id=${newData5.pid}>❌</p>
+                </div>
+                <figure>
+                    <div>
+                      <p>已选择：1件</p>
+                    </div>
+                    <div>
+                        <i>合计：${newData5.pprice}元</i>
+                        <p>去结算</p>
+                    </div>
+                    <button>进入商品详情页</button>
                 </figure>
     `
     }
@@ -263,5 +309,11 @@ $(function () {
         // 跳转详情页 + id
         location.assign(`../ProductDetailPage.html?id=${id}`)
       })
+  })
+  // 点击进入详情页
+  $('figure button').on('click', function () {
+    // 跳转时把地址栏的id传过去
+    let id = location.search.split('=')[1]
+    location.assign(`../ProductDetailPage.html?id=${id}`)
   })
 })

@@ -8,6 +8,41 @@ $(function () {
   } else {
     $('.Right').append('<p>当前未登录</p>')
   }
+  // 商品推荐部分
+  $.ajax({
+    url: 'http://localhost:3000/Shoop',
+    type: 'get',
+  }).then((res) => {
+    localStorage.setItem('ProductShowcase', JSON.stringify(res))
+    let str = ''
+    res.forEach((res) => {
+      str = `
+          <li data-id=${res.pid}>
+            <img src="${res.pimg}">
+            <p class="p1">${res.pname}</p>
+            <p class="p2">${res.pprice}元</p>
+            <p class="p3">${res.Evaluation}万人评价</p>
+            <p class="p4">点击前往详情页</p>
+          </li>
+        `
+      $('section div:last').find('ul').append(str)
+    })
+    $('section div:last ul')
+      .find('li')
+      .hover(
+        function () {
+          $(this).find('.p4').stop().fadeIn().end().siblings().find('.p4').stop().fadeOut()
+        },
+        function () {
+          $(this).find('.p4').stop().fadeOut()
+        }
+      )
+      .on('click', function () {
+        let id = $(this).attr('data-id')
+        // 跳转详情页 + id
+        location.assign(`../ProductDetailPage.html?id=${id}`)
+      })
+  })
   // 拿到下拉菜单里的传的id
   let SelId = location.search.slice(1).split('=')[1]
 
@@ -234,82 +269,52 @@ $(function () {
         </div>
     `)
   }
-  let ipt = document.querySelector('#ipt')
-  let ipts = document.querySelector('.ipts')
-  ipt.onclick = function () {
-    if (ipt.checked) {
-      ipts.checked = true
-    } else {
-      ipts.checked = false
-    }
-  }
-  ipts.onclick = function () {
-    if (!ipts.checked) {
-      ipt.checked = false
-    } else {
-      ipt.checked = true
-    }
-  }
-  // 加减
-  let jian = document.querySelector('.jian')
-  let jia = document.querySelector('.jia')
-  let val = document.querySelector('.val')
-  let Bottom = document.querySelector('#Bottom')
-  jian.onclick = function () {
-    if (val.value <= 1 || val.value == '') {
-      val.value = 1
-    } else {
-      val.value--
-    }
-  }
-  jia.onclick = function () {
-    val.value++
-  }
-  $('.delete').on('click', function () {
-    $('.Bottom').remove()
-    let id = $(this).attr('data-id')
-    let SelDatas = JSON.parse(localStorage.getItem('SelDatas'))
-    for (let i in SelDatas) {
-      if (SelDatas.pid == id) {
-        localStorage.removeItem('SelDatas')
+  // 判断父元素中是否有子元素
+  if ($('.Bottom').children().length) {
+    let ipt = document.querySelector('#ipt')
+    let ipts = document.querySelector('.ipts')
+    let jian = document.querySelector('.jian')
+    let jia = document.querySelector('.jia')
+    let val = document.querySelector('.val')
+    ipt.onclick = function () {
+      if (ipt.checked) {
+        ipts.checked = true
+      } else {
+        ipts.checked = false
       }
     }
-  })
-  // 商品推荐部分
-  $.ajax({
-    url: 'http://localhost:3000/Shoop',
-    type: 'get',
-  }).then((res) => {
-    localStorage.setItem('ProductShowcase', JSON.stringify(res))
-    let str = ''
-    res.forEach((res) => {
-      str = `
-          <li data-id=${res.pid}>
-            <img src="${res.pimg}">
-            <p class="p1">${res.pname}</p>
-            <p class="p2">${res.pprice}元</p>
-            <p class="p3">${res.Evaluation}万人评价</p>
-            <p class="p4">点击前往详情页</p>
-          </li>
-        `
-      $('section div:last').find('ul').append(str)
-    })
-    $('section div:last ul')
-      .find('li')
-      .hover(
-        function () {
-          $(this).find('.p4').stop().fadeIn().end().siblings().find('.p4').stop().fadeOut()
-        },
-        function () {
-          $(this).find('.p4').stop().fadeOut()
+    ipts.onclick = function () {
+      if (!ipts.checked) {
+        ipt.checked = false
+      } else {
+        ipt.checked = true
+      }
+    }
+    // 加减
+    jian.onclick = function () {
+      if (val.value <= 1 || val.value == '') {
+        val.value = 1
+      } else {
+        val.value--
+      }
+    }
+    jia.onclick = function () {
+      val.value++
+    }
+    $('.delete').on('click', function () {
+      $('.Bottom').remove()
+      let id = $(this).attr('data-id')
+      let SelDatas = JSON.parse(localStorage.getItem('SelDatas'))
+      for (let i in SelDatas) {
+        if (SelDatas.pid == id) {
+          localStorage.removeItem('SelDatas')
         }
-      )
-      .on('click', function () {
-        let id = $(this).attr('data-id')
-        // 跳转详情页 + id
-        location.assign(`../ProductDetailPage.html?id=${id}`)
-      })
-  })
+      }
+    })
+  } else {
+    $('.Bottom').append('<h1>当前购物车为空</h1>')
+  }
+
   // 点击进入详情页
   $('figure button').on('click', function () {
     // 跳转时把地址栏的id传过去

@@ -8,5 +8,76 @@
     "6": "电视",
     "7": "洗衣机",
     "8": "Readmi G 2021"
-  }]
+  }],
+  "Shoop": [{
+      "pid": "1001",
+      "pimg": "../imge/Shop/1.jpg",
+      "pname": "小米Type-C to AUDIO转接线",
+      "pprice": "9.9",
+      "Evaluation": "80.2"
+    },
+    {
+      "pid": "1002",
+      "pimg": "../imge/Shop/2.webp",
+      "pname": "小米手环7 腕带",
+      "pprice": "19.9",
+      "Evaluation": "2.6"
+    },
+    {
+      "pid": "1003",
+      "pimg": "../imge/Shop/3.webp",
+      "pname": "Readmi Note 11 5G",
+      "pprice": "1199",
+      "Evaluation": "66.3"
+    },
+    {
+      "pid": "1004",
+      "pimg": "../imge/Shop/4.jpg",
+      "pname": "小米67W充电器套装 轻享版",
+      "pprice": "129",
+      "Evaluation": "55.5"
+    },
+    {
+      "pid": "1005",
+      "pimg": "../imge/Shop/5.webp",
+      "pname": "Reademi Note 11T Pro",
+      "pprice": "1799",
+      "Evaluation": "49"
+    },
+    {
+      "pid": "1006",
+      "pimg": "../imge/Shop/6.webp",
+      "pname": "Readmi 10A",
+      "pprice": "699",
+      "Evaluation": "29.4"
+    },
+    {
+      "pid": "1007",
+      "pimg": "../imge/Shop/7.webp",
+      "pname": "小米GaN充电器 33W",
+      "pprice": "79",
+      "Evaluation": "12.2"
+    },
+    {
+      "pid": "1008",
+      "pimg": "../imge/Shop/8.webp",
+      "pname": "小米支架式自拍杆",
+      "pprice": "89",
+      "Evaluation": "39.4"
+    },
+    {
+      "pid": "1009",
+      "pimg": "../imge/Shop/9.webp",
+      "pname": "Readmi K40S",
+      "pprice": "1799",
+      "Evaluation": "113.2"
+    },
+    {
+      "pid": "1010",
+      "pimg": "../imge/Shop/10.webp",
+      "pname": "定制便携式咖啡杯",
+      "pprice": "109",
+      "Evaluation": "9009"
+    }
+  ]
 }

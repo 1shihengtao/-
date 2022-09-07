@@ -62,7 +62,6 @@ $(function () {
     `
     }
   }
-  // 把数据渲染到页面
   for (let res in newData2) {
     if (SelId == newData2.pid) {
       ShopStr = `
@@ -229,5 +228,40 @@ $(function () {
         localStorage.removeItem('SelDatas')
       }
     }
+  })
+  // 商品推荐部分
+  $.ajax({
+    url: 'http://localhost:3000/Shoop',
+    type: 'get',
+  }).then((res) => {
+    localStorage.setItem('ProductShowcase', JSON.stringify(res))
+    let str = ''
+    res.forEach((res) => {
+      str = `
+          <li data-id=${res.pid}>
+            <img src="${res.pimg}">
+            <p class="p1">${res.pname}</p>
+            <p class="p2">${res.pprice}元</p>
+            <p class="p3">${res.Evaluation}万人评价</p>
+            <p class="p4">点击前往详情页</p>
+          </li>
+        `
+      $('section div:last').find('ul').append(str)
+    })
+    $('section div:last ul')
+      .find('li')
+      .hover(
+        function () {
+          $(this).find('.p4').stop().fadeIn().end().siblings().find('.p4').stop().fadeOut()
+        },
+        function () {
+          $(this).find('.p4').stop().fadeOut()
+        }
+      )
+      .on('click', function () {
+        let id = $(this).attr('data-id')
+        // 跳转详情页 + id
+        location.assign(`../ProductDetailPage.html?id=${id}`)
+      })
   })
 })

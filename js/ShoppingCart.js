@@ -52,7 +52,7 @@ $(function () {
     PriceNum = {}
   }
   // 判断PriceNum中有没有买过
-  function save(id, num=1) {
+  function save(id, num = 1) {
     if (PriceNum[id] === undefined) {
       PriceNum[id] = num
     } else {
@@ -115,7 +115,6 @@ $(function () {
                     </div>
                     <div>
                         <i>合计：${newData1.pprice}元</i>
-                        <p>去结算</p>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -161,7 +160,6 @@ $(function () {
                     </div>
                     <div>
                         <i>合计：${newData2.pprice}元</i>
-                        <p>去结算</p>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -207,7 +205,6 @@ $(function () {
                     </div>
                     <div>
                         <i>合计：${newData3.pprice}元</i>
-                        <p>去结算</p>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -253,7 +250,6 @@ $(function () {
                     </div>
                     <div>
                         <i>合计：${newData4.pprice}元</i>
-                        <p>去结算</p>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -295,11 +291,10 @@ $(function () {
           </div>
             <figure>
                     <div>
-                      <p>已选择：1件</p>
+                      <p>已选择：0件</p>
                     </div>
                     <div>
-                        <i>合计：${newData5.pprice}元</i>
-                        <p>去结算</p>
+                        <i>合计：0元</i>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -334,15 +329,23 @@ $(function () {
     ipt.onclick = function () {
       if (ipt.checked) {
         ipts.checked = true
+        $('figure div:first').append(`<p>已选择：${$('.Bottom').children().length - 1}</p>`).find('p').eq(0).hide()
+        $('figure div:last').append(`<i>合计：${$('#samll').text()}元</i>`).find('i').eq(0).hide()
       } else {
         ipts.checked = false
+        $('figure div:first').find('p').eq(0).show().siblings().hide()
+        $('figure div:last').find('i').eq(0).show().siblings().hide()
       }
     }
     ipts.onclick = (function () {
       if (!ipts.checked) {
         ipt.checked = false
+        $('figure div:first').find('p').eq(0).show().siblings().hide()
+        $('figure div:last').find('i').eq(0).show().siblings().hide()
       } else {
         ipt.checked = true
+        $('figure div:first').append(`<p>已选择：${$('.Bottom').children().length - 1}</p>`).find('p').eq(0).hide()
+        $('figure div:last').append(`<i>合计：${$('#samll').text()}元</i>`).find('i').eq(0).hide()
       }
     })
     // 加
@@ -361,16 +364,28 @@ $(function () {
     // 减
     $('.jian').on('click', function () {
       let addNum = JSON.parse(localStorage.getItem('PriceNums'))
-        for (let i in addNum) {
-          if (i == SelId) {
-            let price1 = parseInt($('.top3 p').text())
-            let price2 = parseInt($('#samll').text())
-            $('#samll').text(price2 - price1)
-            addNum[i]--
-            $('.val').val(addNum[i])
-            localStorage.setItem("PriceNums", JSON.stringify(addNum))
-          }
+      for (let i in addNum) {
+        if (i == SelId) {
+          let price1 = parseInt($('.top3 p').text())
+          let price2 = parseInt($('#samll').text())
+          $('#samll').text(price2 - price1)
+          addNum[i]--
+          $('.val').val(addNum[i])
+          localStorage.setItem("PriceNums", JSON.stringify(addNum))
         }
+      }
+    })
+    // 输入框内容改变时
+    $('.val').on('input', function () {
+      let addNum = JSON.parse(localStorage.getItem('PriceNums'))
+      for (let i in addNum) {
+        if (i == SelId) {
+          let zhi = $('.val').val()
+          $('#samll').text(zhi * $('.top3 p').text())
+          addNum[i] = parseInt(zhi)
+          localStorage.setItem("PriceNums", JSON.stringify(addNum))
+        }
+      }
     })
     // 删除
     $('.delete').on('click', function () {

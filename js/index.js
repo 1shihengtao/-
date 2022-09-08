@@ -280,10 +280,11 @@ $(function () {
     res.forEach((res) => {
       for (let i in res) {
         SelStr = `
-          <li id="lis">${res[i]}</li>
+          <li id="lis" data-name="红米笔记本">${res[9]}</li>
+          <li id="lis" data-name="小米手机">${res[10]}</li>
         `
-        $('.search article').find('ul').append(SelStr)
       }
+      $('.search article').find('ul').append(SelStr)
       $('article #lis').hover(
         function () {
           $(this)
@@ -298,7 +299,12 @@ $(function () {
             })
         },
         function () {}
-      )
+      ).on('click', function () {
+        // 获取自定义属性
+        let uname = $(this).attr('data-name')
+        // 把属性值传过去
+        location.assign(`../Search.html?keyWord=${uname}`)
+      })
     })
   })
 })

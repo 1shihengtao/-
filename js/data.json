@@ -7,7 +7,9 @@
     "5": "冰箱",
     "6": "电视",
     "7": "洗衣机",
-    "8": "Readmi G 2021"
+    "8": "Readmi G 2021",
+    "9": "红米笔记本",
+    "10": "小米手机"
   }],
   "Color": [
     "红色",
@@ -89,6 +91,175 @@
       "pname": "定制便携式咖啡杯",
       "pprice": "109",
       "Evaluation": "9009"
+    }
+  ],
+  "Search": [{
+      "name": "红米笔记本",
+      "pid": 1001,
+      "pimg": "/imge/search/10001.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 5999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1002,
+      "pimg": "/imge/search/10002.jpg",
+      "pname": "Readmi Book Pro 14 2022",
+      "pprice": 4499
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1003,
+      "pimg": "/imge/search/10004.jpg",
+      "pname": "Readmi Book Pro 15 2022",
+      "pprice": 23999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1004,
+      "pimg": "/imge/search/10005.jpg",
+      "pname": "Readmi Book Pro 15 锐龙版",
+      "pprice": 67999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1005,
+      "pimg": "/imge/search/10006.jpg",
+      "pname": "Readmi Book Pro 13",
+      "pprice": 1999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1006,
+      "pimg": "/imge/search/10007.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 2999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1007,
+      "pimg": "/imge/search/10008.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 8999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1008,
+      "pimg": "/imge/search/10009.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 9999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1008,
+      "pimg": "/imge/search/10010.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 6999
+    },
+    {
+      "name": "红米笔记本",
+      "pid": 1009,
+      "pimg": "/imge/search/10011.jpg",
+      "pname": "Xiaomi Book Pro 14 锐龙版",
+      "pprice": 4999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10010,
+      "pimg": "/imge/search/10001.png",
+      "pname": "小米手机",
+      "pprice": 1999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10011,
+      "pimg": "/imge/search/10005.png",
+      "pname": "小米手机",
+      "pprice": 2999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10012,
+      "pimg": "/imge/search/10006.png",
+      "pname": "小米手机",
+      "pprice": 3999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10013,
+      "pimg": "/imge/search/10007.png",
+      "pname": "小米手机",
+      "pprice": 4999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10014,
+      "pimg": "/imge/search/10008.png",
+      "pname": "小米手机",
+      "pprice": 5999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10015,
+      "pimg": "/imge/search/10009.png",
+      "pname": "小米手机",
+      "pprice": 6999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10016,
+      "pimg": "/imge/search/10010.png",
+      "pname": "小米手机",
+      "pprice": 7999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10017,
+      "pimg": "/imge/search/10011.png",
+      "pname": "小米手机",
+      "pprice": 8999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10018,
+      "pimg": "/imge/search/10012.png",
+      "pname": "小米手机",
+      "pprice": 9999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10019,
+      "pimg": "/imge/search/10013.png",
+      "pname": "小米手机",
+      "pprice": 10999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10020,
+      "pimg": "/imge/search/10014.png",
+      "pname": "小米手机",
+      "pprice": 11999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10021,
+      "pimg": "/imge/search/10015.png",
+      "pname": "小米手机",
+      "pprice": 12999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10022,
+      "pimg": "/imge/search/10016.png",
+      "pname": "小米手机",
+      "pprice": 13999
+    },
+    {
+      "name": "小米手机",
+      "pid": 10023,
+      "pimg": "/imge/search/10017.png",
+      "pname": "小米手机",
+      "pprice": 14999
     }
   ]
 }

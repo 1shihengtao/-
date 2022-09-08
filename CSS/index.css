@@ -402,7 +402,7 @@ body {
 .search article {
     position: absolute;
     display: none;
-    top: 50px;
+    top: 45px;
     z-index: 99999999999999;
     width: 245px;
     height: 250px;

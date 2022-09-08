@@ -111,10 +111,10 @@ $(function () {
           </div>
               <figure>
                     <div>
-                      <p>已选择：1件</p>
+                      <p>已选择：0件</p>
                     </div>
                     <div>
-                        <i>合计：${newData1.pprice}元</i>
+                        <i>合计：0元</i>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -156,10 +156,10 @@ $(function () {
           </div>
            <figure>
                     <div>
-                      <p>已选择：1件</p>
+                      <p>已选择：0件</p>
                     </div>
                     <div>
-                        <i>合计：${newData2.pprice}元</i>
+                        <i>合计：0元</i>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -201,10 +201,10 @@ $(function () {
             </div>
               <figure>
                     <div>
-                      <p>已选择：1件</p>
+                      <p>已选择：0件</p>
                     </div>
                     <div>
-                        <i>合计：${newData3.pprice}元</i>
+                        <i>合计：0元</i>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -246,10 +246,10 @@ $(function () {
             </div>
               <figure>
                     <div>
-                      <p>已选择：1件</p>
+                      <p>已选择：0件</p>
                     </div>
                     <div>
-                        <i>合计：${newData4.pprice}元</i>
+                        <i>合计：0元</i>
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
@@ -329,7 +329,7 @@ $(function () {
     ipt.onclick = function () {
       if (ipt.checked) {
         ipts.checked = true
-        $('figure div:first').append(`<p>已选择：${$('.Bottom').children().length - 1}</p>`).find('p').eq(0).hide()
+        $('figure div:first').append(`<p>已选择：${$('.Bottom').children().length - 1}件</p>`).find('p').eq(0).hide()
         $('figure div:last').append(`<i>合计：${$('#samll').text()}元</i>`).find('i').eq(0).hide()
       } else {
         ipts.checked = false

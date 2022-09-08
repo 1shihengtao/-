@@ -3,18 +3,26 @@ $(function () {
     .find('.lis a')
     .hover(
       function () {
-        $(this).css({ color: '#ba3500e3' }).siblings().stop().slideDown()
+        $(this).css({
+          color: '#ba3500e3'
+        }).siblings().stop().slideDown()
       },
       function () {
-        $(this).css({ color: '#838383' }).siblings().stop().slideUp()
+        $(this).css({
+          color: '#838383'
+        }).siblings().stop().slideUp()
       }
     )
   $('article figure').hover(
     function () {
-      $(this).find('big').css({ opacity: 1 }).end().next().stop().fadeIn()
+      $(this).find('big').css({
+        opacity: 1
+      }).end().next().stop().fadeIn()
     },
     function () {
-      $(this).find('big').css({ opacity: 1 }).end().next().stop().fadeOut()
+      $(this).find('big').css({
+        opacity: 1
+      }).end().next().stop().fadeOut()
     }
   )
   $('form .Pyan').on('click', function () {
@@ -59,16 +67,13 @@ $(function () {
           password: $(this).prev().find('input').eq(1).val(),
         },
       }).then((res) => {
-        if (res.code == 1) {
+        if ($('.user').val() == '' || $('.ueserPass').val() == '') {
+          alert('用户名或密码不存在，请先注册后使用')
+        } else {
           // 把用户的信息存储到本地
           sessionStorage.setItem('UserData', JSON.stringify(res.data))
           // 跳转时把用户名传过去
           location.assign(`../index.html?uname:${res.data.username}`)
-          if ($('.yes').prop('checked')) {
-            $('.yes').css({ width: '100px' })
-          }
-        } else {
-          alert('用户名或密码不存在，请先注册后使用')
         }
       })
     })

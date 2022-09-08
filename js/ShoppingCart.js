@@ -43,15 +43,33 @@ $(function () {
         location.assign(`../ProductDetailPage.html?id=${id}`)
       })
   })
+  // 存储id和数量
+  let PriceNum
+  // 判断本地有没有数据
+  if (localStorage.getItem('PriceNums')) {
+    PriceNum = JSON.parse(localStorage.getItem('PriceNums'))
+  } else {
+    PriceNum = {}
+  }
+  // 判断PriceNum中有没有买过
+  function save(id, num=1) {
+    if (PriceNum[id] === undefined) {
+      PriceNum[id] = num
+    } else {
+      PriceNum[id] += num
+    }
+    localStorage.setItem('PriceNums', JSON.stringify(PriceNum))
+  }
   // 拿到下拉菜单里的传的id
   let SelId = location.search.slice(1).split('=')[1]
-
+  save(SelId)
   // 获取本地对应的数据
   let SelData = JSON.parse(localStorage.getItem('PhoneData'))
   let SlideData = JSON.parse(localStorage.getItem('SlideData'))
   let ComputedData = JSON.parse(localStorage.getItem('ComputedData'))
   let PhoneData = JSON.parse(localStorage.getItem('PhoneData'))
   let ProductShowcase = JSON.parse(localStorage.getItem('ProductShowcase'))
+  let PriceNums = JSON.parse(localStorage.getItem('PriceNums'))
   // 遍历数据 找到和传过来的id相同的
   let newData1 = SelData.find((res) => SelId == res.pid)
   let newData2 = SlideData.find((res) => SelId == res.pid)
@@ -62,8 +80,11 @@ $(function () {
   // 把数据渲染到页面
   for (let res in newData1) {
     if (SelId == newData1.pid) {
-      ShopStr = `
-                <div class="top1">
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+          <div id="ShopCar">
+              <div class="top1">
                     <input type="checkbox" class="ipts">
                 </div>
                 <em></em>
@@ -77,17 +98,18 @@ $(function () {
                 <div class="top4">
                     <div>
                         <i class="jian">➖</i>
-                        <input type="text" value="1" class='val'>
+                        <input type="text" class='val' value="${PriceNums[i]}">
                         <i class="jia">➕</i>
                     </div>
                 </div>
                 <div class="top5">
-                    <p>${newData1.pprice}</p>
+                    <p id="samll">${newData1.pprice * PriceNums[i]}</p>
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData1.pid}>❌</p>
                 </div>
-                <figure>
+          </div>
+              <figure>
                     <div>
                       <p>已选择：1件</p>
                     </div>
@@ -98,12 +120,17 @@ $(function () {
                     <button>进入商品详情页</button>
                 </figure>
     `
+        }
+      }
     }
   }
   for (let res in newData2) {
     if (SelId == newData2.pid) {
-      ShopStr = `
-                <div class="top1">
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+          <div id="ShopCar">
+              <div class="top1">
                     <input type="checkbox" class="ipts">
                 </div>
                 <em></em>
@@ -117,17 +144,18 @@ $(function () {
                 <div class="top4">
                     <div>
                         <i class="jian">➖</i>
-                        <input type="text" value="1" class='val'>
+                        <input type="text" class='val' value="${PriceNums[i]}">
                         <i class="jia">➕</i>
                     </div>
                 </div>
                 <div class="top5">
-                    <p>${newData2.pprice}</p>
+                    <p id="samll">${newData2.pprice * PriceNums[i]}</p>
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData2.pid}>❌</p>
                 </div>
-                <figure>
+          </div>
+           <figure>
                     <div>
                       <p>已选择：1件</p>
                     </div>
@@ -138,12 +166,17 @@ $(function () {
                     <button>进入商品详情页</button>
                 </figure>
     `
+        }
+      }
     }
   }
   for (let res in newData3) {
     if (SelId == newData3.pid) {
-      ShopStr = `
-                <div class="top1">
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+            <div id="ShopCar">
+              <div class="top1">
                     <input type="checkbox" class="ipts">
                 </div>
                 <em></em>
@@ -157,17 +190,18 @@ $(function () {
                 <div class="top4">
                     <div>
                         <i class="jian">➖</i>
-                        <input type="text" value="1" class='val'>
+                        <input type="text" class='val' value="${PriceNums[i]}">
                         <i class="jia">➕</i>
                     </div>
                 </div>
                 <div class="top5">
-                    <p>${newData3.pprice}</p>
+                    <p id="samll">${newData3.pprice * PriceNums[i]}</p>
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData3.pid}>❌</p>
                 </div>
-                <figure>
+            </div>
+              <figure>
                     <div>
                       <p>已选择：1件</p>
                     </div>
@@ -178,12 +212,17 @@ $(function () {
                     <button>进入商品详情页</button>
                 </figure>
     `
+        }
+      }
     }
   }
   for (let res in newData4) {
     if (SelId == newData4.pid) {
-      ShopStr = `
-                <div class="top1">
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+            <div id="ShopCar">
+              <div class="top1">
                     <input type="checkbox" class="ipts">
                 </div>
                 <em></em>
@@ -197,17 +236,18 @@ $(function () {
                 <div class="top4">
                     <div>
                         <i class="jian">➖</i>
-                        <input type="text" value="1" class='val'>
+                        <input type="text" class='val' value="${PriceNums[i]}">
                         <i class="jia">➕</i>
                     </div>
                 </div>
                 <div class="top5">
-                    <p>${newData4.pprice}</p>
+                    <p id="samll">${newData4.pprice * PriceNums[i]}</p>
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData4.pid}>❌</p>
                 </div>
-                <figure>
+            </div>
+              <figure>
                     <div>
                       <p>已选择：1件</p>
                     </div>
@@ -218,12 +258,17 @@ $(function () {
                     <button>进入商品详情页</button>
                 </figure>
     `
+        }
+      }
     }
   }
   for (let res in newData5) {
     if (SelId == newData5.pid) {
-      ShopStr = `
-                <div class="top1">
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+          <div id="ShopCar">
+              <div class="top1">
                     <input type="checkbox" class="ipts">
                 </div>
                 <em></em>
@@ -237,17 +282,18 @@ $(function () {
                 <div class="top4">
                     <div>
                         <i class="jian">➖</i>
-                        <input type="text" value="1" class='val'>
+                        <input type="text" class='val' value="${PriceNums[i]}">
                         <i class="jia">➕</i>
                     </div>
                 </div>
                 <div class="top5">
-                    <p>${newData5.pprice}</p>
+                    <p id="samll">${newData5.pprice * PriceNums[i]}</p>
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData5.pid}>❌</p>
                 </div>
-                <figure>
+          </div>
+            <figure>
                     <div>
                       <p>已选择：1件</p>
                     </div>
@@ -257,7 +303,9 @@ $(function () {
                     </div>
                     <button>进入商品详情页</button>
                 </figure>
-    `
+        `
+        }
+      }
     }
   }
   if (name) {
@@ -269,13 +317,20 @@ $(function () {
         </div>
     `)
   }
+  // 如果父元素里没有子元素，就禁用复选框
+  if (!$('.Bottom').children().length) {
+    $('#ipt').prop({
+      disabled: true,
+    })
+  } else {
+    $('#ipt').prop({
+      disabled: false,
+    })
+  }
   // 判断父元素中是否有子元素
   if ($('.Bottom').children().length) {
     let ipt = document.querySelector('#ipt')
     let ipts = document.querySelector('.ipts')
-    let jian = document.querySelector('.jian')
-    let jia = document.querySelector('.jia')
-    let val = document.querySelector('.val')
     ipt.onclick = function () {
       if (ipt.checked) {
         ipts.checked = true
@@ -283,26 +338,43 @@ $(function () {
         ipts.checked = false
       }
     }
-    ipts.onclick = function () {
+    ipts.onclick = (function () {
       if (!ipts.checked) {
         ipt.checked = false
       } else {
         ipt.checked = true
       }
-    }
-    // 加减
-    jian.onclick = function () {
-      if (val.value <= 1 || val.value == '') {
-        val.value = 1
-      } else {
-        val.value--
+    })
+    // 加
+    $('.jia').on('click', function () {
+      let addNum = JSON.parse(localStorage.getItem('PriceNums'))
+      for (let i in addNum) {
+        if (i == SelId) {
+          let price = parseInt($('.top3 p').text())
+          $('#samll').text(price * addNum[i])
+          addNum[i]++
+          $('.val').val(addNum[i])
+          localStorage.setItem("PriceNums", JSON.stringify(addNum))
+        }
       }
-    }
-    jia.onclick = function () {
-      val.value++
-    }
+    })
+    // 减
+    $('.jian').on('click', function () {
+      let addNum = JSON.parse(localStorage.getItem('PriceNums'))
+        for (let i in addNum) {
+          if (i == SelId) {
+            let price1 = parseInt($('.top3 p').text())
+            let price2 = parseInt($('#samll').text())
+            $('#samll').text(price2 - price1)
+            addNum[i]--
+            $('.val').val(addNum[i])
+            localStorage.setItem("PriceNums", JSON.stringify(addNum))
+          }
+        }
+    })
+    // 删除
     $('.delete').on('click', function () {
-      $('.Bottom').remove()
+      $('.Bottom #ShopCar').remove()
       let id = $(this).attr('data-id')
       let SelDatas = JSON.parse(localStorage.getItem('SelDatas'))
       for (let i in SelDatas) {
@@ -314,7 +386,6 @@ $(function () {
   } else {
     $('.Bottom').append('<h1>当前购物车为空</h1>')
   }
-
   // 点击进入详情页
   $('figure button').on('click', function () {
     // 跳转时把地址栏的id传过去

@@ -198,9 +198,11 @@ aside div .Bottom {
   height: 116px;
 }
 aside div .Bottom h1 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 400;
   font-family: "幼圆";
+  line-height: 116px;
+  color: #ff6700;
 }
 aside div .Bottom .top1 {
   float: left;

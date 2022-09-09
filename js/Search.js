@@ -176,24 +176,41 @@ $(function () {
     })
   })
   // 列表展示
+  function getUrlParam(keyWord) {
+    // 获取参数
+    let SearchName = location.search
+    // 正则筛选地址栏
+    var reg = new RegExp("(^|&)" + keyWord + "=([^&]*)(&|$)");
+    // 匹配目标参数
+    var result = SearchName.substr(1).match(reg);
+    //返回参数值
+    return result ? decodeURIComponent(result[2]) : null;
+  }
+  // 地址的参数
+  let SearchName = getUrlParam("keyWord");
   $.ajax({
     url: 'http://localhost:3000/Search',
     type: 'get'
   }).then(res => {
     // 存储本地
     localStorage.setItem("SearchData", JSON.stringify(res))
+    // 用拿到的参数和数据库中的数据比较找到一样的
+    // 利用filter过滤出复合条件的所有数组
+    let newSearchName = res.filter(res => SearchName == res.name)
     // 遍历数据
     let str = ''
-    res.forEach(res => {
-      str =
-      `
+    newSearchName.forEach(res => {
+      if (SearchName == res.name) {
+        str =
+          `
         <li>
           <img src="${res.pimg}">
           <p class="pp1">${res.pname}</p>
           <p class="pp2">${res.pprice}元起</p>
         </li>
       `
-      $('.Product .Search').find('ul').append(str)
+        $('.Product .Search').find('ul').append(str)
+      }
     })
   })
 })

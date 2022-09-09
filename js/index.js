@@ -265,7 +265,7 @@ $(function () {
     type: 'get',
   }).then((res) => {
     let str = ''
-    setInterval(() => {
+    let timer = setInterval(() => {
       res.forEach((res) => {
         // 随机索引
         let idx = Math.ceil(Math.random() * 7)
@@ -303,6 +303,11 @@ $(function () {
         // 获取自定义属性
         let uname = $(this).attr('data-name')
         // 把属性值传过去
+        location.assign(`../Search.html?keyWord=${uname}`)
+      }).end()
+        .find('.one').on('click', function () {
+        // 点击搜索时取到文本框的值传过去
+        let uname = $('.two').val()
         location.assign(`../Search.html?keyWord=${uname}`)
       })
     })

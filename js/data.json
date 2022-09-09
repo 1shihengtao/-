@@ -222,7 +222,7 @@
     {
       "name": "小米手机",
       "pid": 10018,
-      "pimg": "/imge/search/10012.png",
+      "pimg": "/imge/search/10012.jpg",
       "pname": "小米手机",
       "pprice": 9999
     },
@@ -236,7 +236,7 @@
     {
       "name": "小米手机",
       "pid": 10020,
-      "pimg": "/imge/search/10014.png",
+      "pimg": "/imge/search/10014.jpg",
       "pname": "小米手机",
       "pprice": 11999
     },
@@ -250,7 +250,7 @@
     {
       "name": "小米手机",
       "pid": 10022,
-      "pimg": "/imge/search/10016.png",
+      "pimg": "/imge/search/10016.jpg",
       "pname": "小米手机",
       "pprice": 13999
     },

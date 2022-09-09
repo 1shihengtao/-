@@ -188,6 +188,7 @@ $(function () {
   let PhoneData = JSON.parse(localStorage.getItem('PhoneData'))
   let SlideData = JSON.parse(localStorage.getItem('SlideData'))
   let ComputedData = JSON.parse(localStorage.getItem('ComputedData'))
+  let SearchData = JSON.parse(localStorage.getItem('SearchData'))
   // 取到颜色
   let ShopColor = JSON.parse(localStorage.getItem('ShopColor'))
   // 拿到传过来的id
@@ -197,6 +198,7 @@ $(function () {
   let newProduct1 = PhoneData.find((res) => id == res.pid)
   let newProduct2 = SlideData.find((res) => id == res.pid)
   let newProduct3 = ComputedData.find((res) => id == res.pid)
+  let newProduct4 = SearchData.find((res) => id == res.pid)
   let str = ''
   for (var i in newProduct) {
     if (id == newProduct.pid) {
@@ -333,6 +335,44 @@ $(function () {
           <p id="p6">${newProduct3.pname}</p>
           <p id="p7">${newProduct3.pprice}</p>
           <h1>总计：${newProduct3.pprice}元</h1>
+        </div>
+        <div class="btn">
+          <button>加入购物车</button>
+          <div class="love">喜欢</div>
+        </div>
+        <div class="icon">
+          <span>小米自营</span>
+          <span>小米发货</span>
+          <span>7天无理由退货</span>
+          <span>运费说明</span>
+          <span>企业信息</span>
+          <span>7天价格保护</span>
+        </div>
+      </div>
+      `
+    }
+  }
+  for (var i in newProduct4) {
+    if (id == newProduct4.pid) {
+      str = `
+      <div id="Left">
+        <img src="${newProduct4.pimg}" alt="">
+      </div>
+      <div id="Right">
+        <p id="p1">${newProduct4.pname}</p>
+        <p id="p2">凑合用吧~~~~~~~~</p>
+        <p id="p3">小米自营</p>
+        <p id="p4">${newProduct4.pprice}</p>
+        <div class="line"></div>
+        <div class="dizhi">
+          <p id="p5">河南  濮阳市  华龙区  开州街道  <em>修改</em></p>
+          <i style="color: #ff6700;">有现货</i>
+        </div>
+        <div class="color">选择颜色</div>
+        <div class="price">
+          <p id="p6">${newProduct4.pname}</p>
+          <p id="p7">${newProduct4.pprice}</p>
+          <h1>总计：${newProduct4.pprice}元</h1>
         </div>
         <div class="btn">
           <button>加入购物车</button>

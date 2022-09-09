@@ -270,11 +270,11 @@ $(function () {
         // 随机索引
         let idx = Math.ceil(Math.random() * 7)
         str = `
-          <input type="search" class="two" placeholder="${res[idx]}" autofocus />
+          <input type="search" class="two" placeholder="${res[idx]}（点击下拉框数据跳转对应商品）" autofocus />
         `
       })
       $('.xuanze .search').append(str)
-    }, 5000)
+    }, 2000)
     // 搜索下拉框里的数据
     let SelStr = ''
     res.forEach((res) => {
@@ -303,11 +303,6 @@ $(function () {
         // 获取自定义属性
         let uname = $(this).attr('data-name')
         // 把属性值传过去
-        location.assign(`../Search.html?keyWord=${uname}`)
-      }).end()
-        .find('.one').on('click', function () {
-        // 点击搜索时取到文本框的值传过去
-        let uname = $('.two').val()
         location.assign(`../Search.html?keyWord=${uname}`)
       })
     })

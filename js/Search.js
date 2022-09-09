@@ -203,14 +203,22 @@ $(function () {
       if (SearchName == res.name) {
         str =
           `
-        <li>
+        <li data-id=${res.pid} id="liss">
           <img src="${res.pimg}">
           <p class="pp1">${res.pname}</p>
           <p class="pp2">${res.pprice}元起</p>
         </li>
       `
         $('.Product .Search').find('ul').append(str)
+      } else {
+        $('.Product .Search').find('ul').append('<h1>商品不存在</h1>')
       }
     })
+    // 点击商品时跳转 + 参数
+    $('.Product').find('ul').find('li').on('click', function () {
+      let id = $(this).attr('data-id')
+      location.assign(`../ShoppingCart.html?id=${id}`)
+    })
   })
+
 })

@@ -69,6 +69,7 @@ $(function () {
   let ComputedData = JSON.parse(localStorage.getItem('ComputedData'))
   let PhoneData = JSON.parse(localStorage.getItem('PhoneData'))
   let ProductShowcase = JSON.parse(localStorage.getItem('ProductShowcase'))
+  let SearchData = JSON.parse(localStorage.getItem('SearchData'))
   let PriceNums = JSON.parse(localStorage.getItem('PriceNums'))
   // 遍历数据 找到和传过来的id相同的
   let newData1 = SelData.find((res) => SelId == res.pid)
@@ -76,6 +77,7 @@ $(function () {
   let newData3 = ComputedData.find((res) => SelId == res.pid)
   let newData4 = PhoneData.find((res) => SelId == res.pid)
   let newData5 = ProductShowcase.find((res) => SelId == res.pid)
+  let newData6 = SearchData.find((res) => SelId == res.pid)
   let ShopStr = ''
   // 把数据渲染到页面
   for (let res in newData1) {
@@ -287,6 +289,51 @@ $(function () {
                 </div>
                 <div class="top6">
                     <p class="delete" data-id=${newData5.pid}>❌</p>
+                </div>
+          </div>
+            <figure>
+                    <div>
+                      <p>已选择：0件</p>
+                    </div>
+                    <div>
+                        <i>合计：0元</i>
+                    </div>
+                    <button>进入商品详情页</button>
+                </figure>
+        `
+        }
+      }
+    }
+  }
+  for (let res in newData6) {
+    if (SelId == newData6.pid) {
+      for (let i in PriceNums) {
+        if (i == SelId) {
+          ShopStr = `
+          <div id="ShopCar">
+              <div class="top1">
+                    <input type="checkbox" class="ipts">
+                </div>
+                <em></em>
+                <div class="top2">
+                <img src="${newData6.pimg}">
+                <p>${newData6.pname}</p>
+                </div>
+                <div class="top3">
+                    <p>${newData6.pprice}</p>
+                </div>
+                <div class="top4">
+                    <div>
+                        <i class="jian">➖</i>
+                        <input type="text" class='val' value="${PriceNums[i]}">
+                        <i class="jia">➕</i>
+                    </div>
+                </div>
+                <div class="top5">
+                    <p id="samll">${newData6.pprice * PriceNums[i]}</p>
+                </div>
+                <div class="top6">
+                    <p class="delete" data-id=${newData6.pid}>❌</p>
                 </div>
           </div>
             <figure>
